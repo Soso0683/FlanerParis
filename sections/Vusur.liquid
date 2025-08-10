@@ -1,5 +1,5 @@
 {% comment %}
-  Section: Logos 2up (défilement auto, 4 logos max, 2 visibles)
+  Section: Logos 2up (auto, step=1, couleurs originales)
   Fichier: sections/logos-2up.liquid
 {% endcomment %}
 
@@ -27,8 +27,8 @@
     /* --- Scope par section id --- */
     #logos2-{{ section.id }}.l2up{
       --gap: 24px;
-      --speed: {{ section.settings.interval | default: 5000 }}ms;
       --img-h: 42px;
+      --visible: 2;
       margin:0; padding:0;
     }
     #logos2-{{ section.id }} .l2up-vp{
@@ -36,16 +36,20 @@
     }
     #logos2-{{ section.id }} .l2up-track{
       display:flex; align-items:center; gap:var(--gap);
-      transition:transform .6s ease; will-change:transform;
+      will-change:transform;
+      transform: translateX(0);
     }
     #logos2-{{ section.id }} .l2up-item{
-      flex:0 0 calc((100% - var(--gap)) / var(--visible)); /* 2 visibles */
+      /* 2 visibles en même temps */
+      flex:0 0 calc((100% - var(--gap)) / var(--visible));
       display:flex; align-items:center; justify-content:center;
       min-height:64px;
     }
     #logos2-{{ section.id }} .l2up-img{
-      max-height:var(--img-h); max-width:100%; width:auto; height:auto; object-fit:contain;
-      filter: {{ section.settings.grayscale | default: true | json | replace: 'true','grayscale(100%) opacity(0.9)' | replace: 'false','none' }};
+      max-height:var(--img-h); max-width:100%;
+      width:auto; height:auto; object-fit:contain;
+      /* Couleurs originales: aucun filtre */
+      filter: none;
     }
     @media (max-width: 640px){
       #logos2-{{ section.id }}.l2up{ --gap:16px; --img-h:36px; }
@@ -54,35 +58,59 @@
 
   <script>
     (function(){
-      const root   = document.getElementById('logos2-{{ section.id }}');
+      const root  = document.getElementById('logos2-{{ section.id }}');
       if(!root) return;
 
-      const track  = root.querySelector('.l2up-track');
-      const items  = Array.from(root.querySelectorAll('.l2up-item'));
-      const css    = getComputedStyle(track);
-      const vis    = parseInt(css.getPropertyValue('--visible')) || 2;
-      const total  = items.length;
+      const track = root.querySelector('.l2up-track');
+      let items   = Array.from(root.querySelectorAll('.l2up-item'));
+      const visible = 2;
 
-      if (total <= vis) return; // inutile de défiler
+      if (items.length <= visible) return; // inutile de défiler
 
-      // Nombre d'étapes (par paire)
-      const steps  = Math.ceil(total / vis);
-      const stepPct = 100 / steps; // ex: 4 logos / 2 visibles => 50%
-      let idx = 0;
+      // Duplique tous les items pour une boucle fluide
+      items.forEach(el => track.appendChild(el.cloneNode(true)));
 
+      // Recalcule la liste complète (originals + clones)
+      items = Array.from(track.children);
+
+      let index = 0;
       const interval = parseInt({{ section.settings.interval | default: 5000 }}) || 5000;
 
-      function go(i){ track.style.transform = 'translateX(' + (-i * stepPct) + '%)'; }
+      // Calcule le pas en pixels (largeur d'un item + gap)
+      function getStepPx(){
+        const first = items[0];
+        const gapPx = parseFloat(getComputedStyle(track).gap) || 0;
+        return first.getBoundingClientRect().width + gapPx;
+      }
 
-      let timer = setInterval(()=>{ idx = (idx + 1) % steps; go(idx); }, interval);
+      function go(i, animate = true){
+        track.style.transition = animate ? 'transform .6s ease' : 'none';
+        const step = getStepPx();
+        track.style.transform = 'translateX(' + (-i * step) + 'px)';
+      }
 
+      // Quand on atteint la fin des originaux, on reset discrètement
+      track.addEventListener('transitionend', () => {
+        if (index >= (items.length / 2)) {
+          index = 0;
+          go(index, false); // reset instantané
+        }
+      });
+
+      let timer = setInterval(() => {
+        index += 1;          // pas de 1 logo
+        go(index, true);     // nouveau slide entre depuis la droite
+      }, interval);
+
+      // Pause au survol
       root.addEventListener('mouseenter', ()=> clearInterval(timer));
       root.addEventListener('mouseleave', ()=>{
         clearInterval(timer);
-        timer = setInterval(()=>{ idx = (idx + 1) % steps; go(idx); }, interval);
+        timer = setInterval(() => { index += 1; go(index, true); }, interval);
       });
 
-      go(0);
+      // Position de départ
+      go(0, false);
     })();
   </script>
 </section>
@@ -97,12 +125,6 @@
       "label": "Intervalle (ms)",
       "default": 5000,
       "info": "Temps entre les défilements (ex : 5000 = 5 s)"
-    },
-    {
-      "type": "checkbox",
-      "id": "grayscale",
-      "label": "Niveaux de gris",
-      "default": true
     }
   ],
   "blocks": [
@@ -115,7 +137,7 @@
       ]
     }
   ],
-  "max_blocks": 4,
+  "max_blocks": 8,
   "presets": [{ "name": "Logos 2up" }]
 }
 {% endschema %}
