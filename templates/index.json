@@ -492,16 +492,56 @@
             "title": "Warum nur hier kaufen?",
             "content": "<p>Originalprodukt, direkter Kundensupport und exklusive Angebote nur auf unserer Seite.</p>",
             "open_by_default": false,
+            "icon_image": "shopify://shop_images/Capture_d_ecran_2025-08-10_130505.jpg",
             "icon_alt": "Icon",
             "emoji": "",
             "builtin_icon": "question"
+          }
+        },
+        "item_EYnjY4": {
+          "type": "item",
+          "settings": {
+            "title": "Kostenloser Versand",
+            "content": "<p>Ihre Zufriedenheit hat Priorität – deshalb übernehmen wir die Versandkosten.</p>",
+            "open_by_default": false,
+            "icon_image": "shopify://shop_images/Capture_d_ecran_2025-08-10_130524.jpg",
+            "icon_alt": "Icon",
+            "emoji": "",
+            "builtin_icon": "truck"
+          }
+        },
+        "item_WwDKea": {
+          "type": "item",
+          "settings": {
+            "title": "Kostenloser Versand",
+            "content": "<p>Ihre Zufriedenheit hat Priorität – deshalb übernehmen wir die Versandkosten.</p>",
+            "open_by_default": false,
+            "icon_image": "shopify://shop_images/Capture_d_ecran_2025-08-10_130543.jpg",
+            "icon_alt": "Icon",
+            "emoji": "",
+            "builtin_icon": "truck"
+          }
+        },
+        "item_F6xwLJ": {
+          "type": "item",
+          "settings": {
+            "title": "Kostenloser Versand",
+            "content": "<p>Ihre Zufriedenheit hat Priorität – deshalb übernehmen wir die Versandkosten.</p>",
+            "open_by_default": false,
+            "icon_image": "shopify://shop_images/Capture_d_ecran_2025-08-10_130555.jpg",
+            "icon_alt": "Icon",
+            "emoji": "",
+            "builtin_icon": "truck"
           }
         }
       },
       "block_order": [
         "item_xgQEyX",
         "item_BVK6KB",
-        "item_Ff4y3a"
+        "item_Ff4y3a",
+        "item_EYnjY4",
+        "item_WwDKea",
+        "item_F6xwLJ"
       ],
       "name": "Accordéon pictos (DE)",
       "settings": {
