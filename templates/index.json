@@ -106,7 +106,7 @@
         "richtext_kqtCrc"
       ],
       "custom_css": [
-        ".section-full {padding-top: 10px; padding-bottom: 10px;}"
+        ".section-full {padding-top: 10px; padding-bottom: 20px;}"
       ],
       "name": "Rich text",
       "settings": {
