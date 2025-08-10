@@ -324,8 +324,7 @@
       ],
       "name": "Logos 2up",
       "settings": {
-        "interval": 5000,
-        "grayscale": true
+        "interval": 5000
       }
     },
     "featured_product_TFNa8U": {
@@ -400,9 +399,11 @@
             "payment_button_text_color": ""
           }
         },
-        "pickup_availability_fK8iTV": {
-          "type": "pickup_availability",
-          "settings": {}
+        "liquid_wqBWQc": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<!-- BADGES + FRISE DE LIVRAISON (DE) -->\n<div class=\"de-timeline\" data-ship-start=\"1\" data-ship-end=\"2\" data-del-start=\"7\" data-del-end=\"9\">\n  <!-- Titre (camion + texte) -->\n  <div class=\"de-top\">\n    <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path d=\"M3 7h11v7h3l2 2v1H17a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3V8c0-.6.4-1 1-1zM19 12h-3V8h2l1 2v2z\" fill=\"currentColor\"/></svg>\n    <span>Kostenloser Versand</span>\n  </div>\n\n  <!-- Badges -->\n  <div class=\"de-timeline__badges\">\n    <span class=\"de-badge de-badge--green\">\n      <svg viewBox=\"0 0 20 20\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M8.5 13.6 4.9 10l1.4-1.4 2.2 2.2 5.2-5.2 1.4 1.4z\"/></svg>\n      90&nbsp;Tage – zufrieden oder Geld zurück\n    </span>\n    <span class=\"de-badge de-badge--red\">\n      <svg viewBox=\"0 0 20 20\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M10 2 2 18h16L10 2zm1 12H9v-2h2v2zm0-4H9V8h2v2z\"/></svg>\n      Geringer Lagerbestand!\n    </span>\n  </div>\n\n  <!-- Timeline -->\n  <div class=\"de-steps\">\n    <div class=\"de-steps__line\" aria-hidden=\"true\"></div>\n\n    <div class=\"de-step\">\n      <div class=\"de-step__dot\">\n        <!-- panier -->\n        <svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\">\n          <path fill=\"#fff\" d=\"M7 8h10l-1 8H8L7 8zm2 10a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9 8l2-3h2l2 3H9z\"/>\n        </svg>\n      </div>\n      <div class=\"de-step__date\" data-role=\"order-date\">–</div>\n      <div class=\"de-step__label\">Bestellt</div>\n    </div>\n\n    <div class=\"de-step\">\n      <div class=\"de-step__dot\">\n        <!-- camion -->\n        <svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\">\n          <path fill=\"#fff\" d=\"M5 8h8v5h3l2 2v1H17a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H4V9a1 1 0 0 1 1-1zm13 5h-3V9h2l1 2v2z\"/>\n        </svg>\n      </div>\n      <div class=\"de-step__date\" data-role=\"ship-range\">–</div>\n      <div class=\"de-step__label\">Versandt</div>\n    </div>\n\n    <div class=\"de-step\">\n      <div class=\"de-step__dot\">\n        <!-- colis -->\n        <svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\">\n          <path fill=\"#fff\" d=\"M6 8l6-3 6 3-6 3-6-3zm0 2l6 3 6-3v6l-6 3-6-3V10z\"/>\n        </svg>\n      </div>\n      <div class=\"de-step__date\" data-role=\"deliv-range\">–</div>\n      <div class=\"de-step__label\">Geliefert</div>\n    </div>\n  </div>\n</div>\n\n<style>\n  /* Variables pour coller au design */\n  .de-timeline{ --dot:56px; --line:3px; --black:#111; font-family:inherit; color:#111 }\n\n  .de-top{display:flex; align-items:center; gap:8px; font-weight:600; margin:0 0 10px; color:var(--black)}\n\n  .de-timeline__badges{display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px}\n  .de-badge{display:inline-flex; align-items:center; gap:6px; border-radius:9999px; padding:8px 12px; font-size:12px; font-weight:700; line-height:1}\n  .de-badge--green{background:#E6F6E9; color:#1E7E34; border:1px solid #CBEAD1}\n  .de-badge--red{background:#FFE9E9; color:#B42318; border:1px solid #F5C2C0}\n\n  .de-steps{position:relative; display:flex; justify-content:space-between; align-items:flex-start; gap:24px}\n  .de-steps__line{position:absolute; left:calc(var(--dot)/2); right:calc(var(--dot)/2); top:calc(var(--dot)/2 - var(--line)/2); height:var(--line); background:var(--black)}\n  .de-step{display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0}\n  .de-step__dot{width:var(--dot); height:var(--dot); border-radius:50%; background:var(--black); display:grid; place-items:center; box-shadow:0 0 0 1px rgba(0,0,0,.1)}\n  .de-step__date{margin-top:10px; font-weight:700; font-size:14px}\n  .de-step__label{font-size:13px; color:#5e5e5e; margin-top:2px}\n\n  @media (max-width:600px){\n    .de-timeline{ --dot:48px }\n    .de-step__date{ font-size:13px }\n    .de-step__label{ font-size:12px }\n  }\n</style>\n\n<script>\n(function(){\n  // Trouve le bon conteneur même si Shopify wrappe le HTML\n  const script = document.currentScript;\n  const root =\n    script.closest('.de-timeline') ||\n    script.parentElement.querySelector('.de-timeline') ||\n    document.querySelector('.de-timeline:last-of-type');\n  if(!root) return;\n\n  // Offsets configurables\n  const shipStart = parseInt(root.dataset.shipStart || '1',10);\n  const shipEnd   = parseInt(root.dataset.shipEnd   || '2',10);\n  const delStart  = parseInt(root.dataset.delStart  || '7',10);\n  const delEnd    = parseInt(root.dataset.delEnd    || '9',10);\n\n  const today = new Date(); // date du navigateur\n\n  function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }\n  // Format \"10 August\" (sans le point allemand après le jour)\n  const fmt = d => new Intl.DateTimeFormat('de-DE',{day:'numeric',month:'long'})\n                    .format(d).replace(/\\./g,'');\n\n  root.querySelector('[data-role=\"order-date\"]').textContent = fmt(today);\n  root.querySelector('[data-role=\"ship-range\"]').textContent  =\n    `${fmt(addDays(today, shipStart))} – ${fmt(addDays(today, shipEnd))}`;\n  root.querySelector('[data-role=\"deliv-range\"]').textContent =\n    `${fmt(addDays(today, delStart))} – ${fmt(addDays(today, delEnd))}`;\n})();\n</script>"
+          }
         }
       },
       "block_order": [
@@ -416,7 +417,7 @@
         "kaching_bundles_app_block_UrLLKM",
         "variant_picker_UdYgfE",
         "buy_buttons_pmj8rn",
-        "pickup_availability_fK8iTV"
+        "liquid_wqBWQc"
       ],
       "name": "Featured product",
       "settings": {
