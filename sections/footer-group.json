@@ -99,8 +99,8 @@
         "text": {
           "type": "text",
           "settings": {
-            "title": "About",
-            "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
+            "title": "Kontakt",
+            "content": "<p>Kundenservice: <a><strong>contact@seolume.com</strong></a></p><p>Zeiten: <strong>Mo–Fr 9:00–12:00 und 14:00–18:00 / Sa & So 10:00–12:00</strong></p>",
             "enable_follow_on_shop": false
           }
         }
