@@ -93,10 +93,17 @@
             "text_color": "",
             "gradient": ""
           }
+        },
+        "richtext_kqtCrc": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h4>Echte Ergebnisse, mit echten Menschen.</h4>"
+          }
         }
       },
       "block_order": [
-        "heading_zJfCKz"
+        "heading_zJfCKz",
+        "richtext_kqtCrc"
       ],
       "name": "Rich text",
       "settings": {
