@@ -1,0 +1,121 @@
+{% comment %}
+  Section: Logos 2up (défilement auto, 4 logos max, 2 visibles)
+  Fichier: sections/logos-2up.liquid
+{% endcomment %}
+
+<section id="logos2-{{ section.id }}" class="l2up" role="region" aria-label="Logos">
+  <div class="l2up-vp">
+    <div class="l2up-track" style="--visible:2;">
+      {%- for block in section.blocks -%}
+        <div class="l2up-item" {{ block.shopify_attributes }}>
+          {%- if block.settings.logo != blank -%}
+            <img
+              class="l2up-img"
+              src="{{ block.settings.logo | img_url: '300x' }}"
+              srcset="{{ block.settings.logo | img_url: '200x' }} 200w, {{ block.settings.logo | img_url: '300x' }} 300w, {{ block.settings.logo | img_url: '400x' }} 400w"
+              sizes="(max-width: 640px) 40vw, 20vw"
+              alt="{{ block.settings.alt | escape }}"
+              loading="lazy"
+            >
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <style>
+    /* --- Scope par section id --- */
+    #logos2-{{ section.id }}.l2up{
+      --gap: 24px;
+      --speed: {{ section.settings.interval | default: 5000 }}ms;
+      --img-h: 42px;
+      margin:0; padding:0;
+    }
+    #logos2-{{ section.id }} .l2up-vp{
+      overflow:hidden; width:100%;
+    }
+    #logos2-{{ section.id }} .l2up-track{
+      display:flex; align-items:center; gap:var(--gap);
+      transition:transform .6s ease; will-change:transform;
+    }
+    #logos2-{{ section.id }} .l2up-item{
+      flex:0 0 calc((100% - var(--gap)) / var(--visible)); /* 2 visibles */
+      display:flex; align-items:center; justify-content:center;
+      min-height:64px;
+    }
+    #logos2-{{ section.id }} .l2up-img{
+      max-height:var(--img-h); max-width:100%; width:auto; height:auto; object-fit:contain;
+      filter: {{ section.settings.grayscale | default: true | json | replace: 'true','grayscale(100%) opacity(0.9)' | replace: 'false','none' }};
+    }
+    @media (max-width: 640px){
+      #logos2-{{ section.id }}.l2up{ --gap:16px; --img-h:36px; }
+    }
+  </style>
+
+  <script>
+    (function(){
+      const root   = document.getElementById('logos2-{{ section.id }}');
+      if(!root) return;
+
+      const track  = root.querySelector('.l2up-track');
+      const items  = Array.from(root.querySelectorAll('.l2up-item'));
+      const css    = getComputedStyle(track);
+      const vis    = parseInt(css.getPropertyValue('--visible')) || 2;
+      const total  = items.length;
+
+      if (total <= vis) return; // inutile de défiler
+
+      // Nombre d'étapes (par paire)
+      const steps  = Math.ceil(total / vis);
+      const stepPct = 100 / steps; // ex: 4 logos / 2 visibles => 50%
+      let idx = 0;
+
+      const interval = parseInt({{ section.settings.interval | default: 5000 }}) || 5000;
+
+      function go(i){ track.style.transform = 'translateX(' + (-i * stepPct) + '%)'; }
+
+      let timer = setInterval(()=>{ idx = (idx + 1) % steps; go(idx); }, interval);
+
+      root.addEventListener('mouseenter', ()=> clearInterval(timer));
+      root.addEventListener('mouseleave', ()=>{
+        clearInterval(timer);
+        timer = setInterval(()=>{ idx = (idx + 1) % steps; go(idx); }, interval);
+      });
+
+      go(0);
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Logos 2up",
+  "settings": [
+    {
+      "type": "number",
+      "id": "interval",
+      "label": "Intervalle (ms)",
+      "default": 5000,
+      "info": "Temps entre les défilements (ex : 5000 = 5 s)"
+    },
+    {
+      "type": "checkbox",
+      "id": "grayscale",
+      "label": "Niveaux de gris",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "logo", "label": "Image du logo" },
+        { "type": "text", "id": "alt", "label": "Texte alternatif", "default": "Logo" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Logos 2up" }]
+}
+{% endschema %}
