@@ -57,6 +57,33 @@
         "text_color": ""
       }
     },
+    "rich_text_6VmDtX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zeAnQy": {
+          "type": "heading",
+          "settings": {
+            "text": "Warum die Kurkuma-Maske wählen?",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_zeAnQy"
+      ],
+      "custom_css": [],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "image_with_text_overlay_zT9Tyy": {
       "type": "image-with-text-overlay",
       "name": "Image with text overlay",
@@ -1054,6 +1081,7 @@
     "image_with_text_overlay_NzAfii",
     "custom_liquid_RpXaHY",
     "custom_liquid_tdNe9b",
+    "rich_text_6VmDtX",
     "image_with_text_overlay_zT9Tyy",
     "rich_text_tKz6U9",
     "multi_column_KKJRHK",
