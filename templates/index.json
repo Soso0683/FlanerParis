@@ -1035,7 +1035,7 @@
             "product_handle": "seoulume",
             "aggregated": true,
             "data-limit": 4,
-            "maxwidth": 1080,
+            "maxwidth": 840,
             "is_sample": true
           }
         }
