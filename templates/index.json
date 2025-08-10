@@ -467,7 +467,7 @@
           "settings": {
             "title": "Kostenloser Versand",
             "content": "<p><strong>Lieferung:</strong><br/><br/>Ihre Zufriedenheit hat Priorität – deshalb übernehmen wir die Versandkosten.</p>",
-            "open_by_default": true,
+            "open_by_default": false,
             "icon_image": "shopify://shop_images/Capture_d_ecran_2025-08-10_130425.jpg",
             "icon_alt": "Icon",
             "emoji": "",
