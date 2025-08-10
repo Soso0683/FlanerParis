@@ -799,12 +799,25 @@
             "link_text": "",
             "link_style": "link"
           }
+        },
+        "item_HcMdjA": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Retinol",
+            "heading_tag": "h4",
+            "content": "<p>Glättet Falten und unterstützt die Zellerneuerung für sichtbar jüngere Haut.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
         }
       },
       "block_order": [
         "item_py9rwL",
         "item_Bp3K4x",
-        "item_RRCa6R"
+        "item_RRCa6R",
+        "item_HcMdjA"
       ],
       "name": "Multi-column",
       "settings": {
