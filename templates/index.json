@@ -36,6 +36,29 @@
         "overlay_opacity": 30
       }
     },
+    "rich_text_EkkXfA": {
+      "type": "rich-text",
+      "blocks": {
+        "richtext_gyqVyh": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h2>Klinisch bewiesen: Sichtbare Ergebnisse ab der 1. Anwendung</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_gyqVyh"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "image-link-blocks": {
       "type": "image-link-blocks",
       "blocks": {
@@ -733,6 +756,7 @@
   "order": [
     "rich_text_gLBLRX",
     "image_with_text_overlay_NzAfii",
+    "rich_text_EkkXfA",
     "image-link-blocks",
     "scrolling-text",
     "collection-list",
