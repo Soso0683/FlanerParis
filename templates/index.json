@@ -284,6 +284,50 @@
         "text_color": ""
       }
     },
+    "vusur_AMMwfb": {
+      "type": "Vusur",
+      "blocks": {
+        "logo_XD9PHX": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/VOGUE_LOGO.svg",
+            "alt": "Logo"
+          }
+        },
+        "logo_C3UkDc": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/images_3.png",
+            "alt": "Logo"
+          }
+        },
+        "logo_MHekY9": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/images_4.png",
+            "alt": "Logo"
+          }
+        },
+        "logo_zVirEU": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Marie_Claire_Magazine_logo_svg.png",
+            "alt": "Logo"
+          }
+        }
+      },
+      "block_order": [
+        "logo_XD9PHX",
+        "logo_C3UkDc",
+        "logo_MHekY9",
+        "logo_zVirEU"
+      ],
+      "name": "Logos 2up",
+      "settings": {
+        "interval": 5000,
+        "grayscale": true
+      }
+    },
     "featured_product_TFNa8U": {
       "type": "featured-product",
       "blocks": {
@@ -456,6 +500,7 @@
     "custom_liquid_KJDMcJ",
     "multi_column_KKJRHK",
     "rich_text_QEmChQ",
+    "vusur_AMMwfb",
     "featured_product_TFNa8U",
     "faq"
   ]
