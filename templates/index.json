@@ -287,10 +287,6 @@
     "featured_product_TFNa8U": {
       "type": "featured-product",
       "blocks": {
-        "vendor_q3Mfm7": {
-          "type": "vendor",
-          "settings": {}
-        },
         "title_EPkr9r": {
           "type": "title",
           "settings": {
@@ -336,10 +332,6 @@
             "size_chart_page": ""
           }
         },
-        "quantity_selector_Vi6GqY": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons_pmj8rn": {
           "type": "buy_buttons",
           "settings": {
@@ -357,7 +349,6 @@
         }
       },
       "block_order": [
-        "vendor_q3Mfm7",
         "title_EPkr9r",
         "badges_fVYgHn",
         "price_CFxeLY",
@@ -365,7 +356,6 @@
         "separator_r4TTTB",
         "description_LHUreh",
         "variant_picker_UdYgfE",
-        "quantity_selector_Vi6GqY",
         "buy_buttons_pmj8rn",
         "pickup_availability_fK8iTV"
       ],
