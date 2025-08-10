@@ -864,10 +864,17 @@
             "text_color": "",
             "gradient": ""
           }
+        },
+        "richtext_ckNVFh": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Alle sichtbaren Anzeichen von Müdigkeit, Stress oder Alterung verschwinden aus Ihrem Gesicht.</p>"
+          }
         }
       },
       "block_order": [
-        "heading_TwDEWJ"
+        "heading_TwDEWJ",
+        "richtext_ckNVFh"
       ],
       "name": "Rich text",
       "settings": {
