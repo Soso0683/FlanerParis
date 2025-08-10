@@ -63,7 +63,7 @@
         "full_width": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "liquid": "<div class=\"proof-text\">\n  <strong>Klinisch bewiesen:</strong><br>\n  Sichtbare Ergebnisse ab<br>\n  der <strong>1<sup>.</sup> Anwendung</strong>\n</div>\n\n<style>\n  .proof-text{\n    font-family:inherit; /* garde la police du thème */\n    font-size:24px; /* ajuste selon ton design */\n    line-height:1.2;\n    font-weight:400;\n    color:#000;\n    text-align:center; /* centre le texte */\n  }\n  .proof-text strong{\n    font-weight:700;\n  }\n  .proof-text sup{\n    font-size:0.65em;\n    vertical-align:super;\n  }\n</style>",
+        "liquid": "<div class=\"proof-text\">\n  <strong>Klinisch bewiesen:</strong><br>\n  Sichtbare Ergebnisse ab<br>\n  der <strong>1<sup>.</sup> Anwendung</strong>\n</div>\n\n<style>\n  .proof-text{\n    font-family:inherit; /* garde la police du thème */\n    font-size:30px; /* ajuste selon ton design */\n    line-height:1.2;\n    font-weight:400;\n    color:#000;\n    text-align:center; /* centre le texte */\n  }\n  .proof-text strong{\n    font-weight:700;\n  }\n  .proof-text sup{\n    font-size:0.65em;\n    vertical-align:super;\n  }\n</style>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
