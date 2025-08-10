@@ -218,6 +218,7 @@
         "item_WXYdRk": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/34.png",
             "column_size": "3",
             "title": "Chloe N.",
             "heading_tag": "h4",
