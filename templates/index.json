@@ -610,6 +610,49 @@
         "text_color": ""
       }
     },
+    "4videos_aiyPqN": {
+      "type": "4videos",
+      "blocks": {
+        "clip_bP8pQ3": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/0810(4).mp4",
+            "mp4_url": ""
+          }
+        },
+        "clip_TGNk4g": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/0810(3).mp4",
+            "mp4_url": ""
+          }
+        },
+        "clip_i7cjKW": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/0810(2).mp4",
+            "mp4_url": ""
+          }
+        },
+        "clip_gPQaT4": {
+          "type": "clip",
+          "settings": {
+            "video": "shopify://files/videos/0810(1).mp4",
+            "mp4_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "clip_bP8pQ3",
+        "clip_TGNk4g",
+        "clip_i7cjKW",
+        "clip_gPQaT4"
+      ],
+      "name": "Vidéos (défilement infini)",
+      "settings": {
+        "heading": "Des résultats concrets"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -678,6 +721,7 @@
     "menuderoulant_bgEe8X",
     "image_with_text_overlay_y7NGxm",
     "rich_text_qgb4ie",
+    "4videos_aiyPqN",
     "faq"
   ]
 }
