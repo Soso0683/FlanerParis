@@ -577,6 +577,39 @@
         "overlay_opacity": 0
       }
     },
+    "rich_text_qgb4ie": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hTz9Wy": {
+          "type": "heading",
+          "settings": {
+            "text": "Dr. Claire Dubois über die koreanische Kurkuma- und Kollagen-Maske Seoulume",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_ddpqAc": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>\"Mit zunehmendem Alter verliert die Haut Feuchtigkeit, der Kollagengehalt nimmt ab und die Zeichen der Zeit setzen sich fest: feine Linien, matter Teint, nachlassende Festigkeit.</p><p>Die <strong>Seoulume</strong>-Nachtmaske vereint die neuesten koreanischen Innovationen mit einer Synergie hochwirksamer Aktivstoffe.</p><p><strong>Kollagen</strong> strafft die Haut, <strong>Kurkuma</strong> und <strong>Vitamin C</strong> lassen den Teint strahlen, während <strong>Retinol</strong> sanft wirkt, um Falten zu glätten.</p><p>Nachts aufgetragen regeneriert diese Maske intensiv – für eine <strong>geschmeidigere</strong>, <strong>leuchtendere</strong> und schon beim Aufwachen <strong>sichtbar verjüngt wirkende</strong> Haut.“</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hTz9Wy",
+        "richtext_ddpqAc"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -644,6 +677,7 @@
     "featured_product_TFNa8U",
     "menuderoulant_bgEe8X",
     "image_with_text_overlay_y7NGxm",
+    "rich_text_qgb4ie",
     "faq"
   ]
 }
