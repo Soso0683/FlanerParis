@@ -117,4 +117,86 @@
   };
 
   // Bouclage
-  track.addEventListe
+  track.addEventListener('transitionend', () => {
+    if (index >= orig + cloneN){ go(index - orig, false); }
+    else if (index < cloneN){    go(index + orig, false); }
+  });
+
+  // Empêcher la capture par le viewport quand on clique les boutons
+  const stopPtr = (e)=>{ e.stopPropagation(); e.preventDefault(); };
+  ['pointerdown','touchstart'].forEach(ev=>{
+    nextB.addEventListener(ev, stopPtr, {passive:false});
+    prevB.addEventListener(ev, stopPtr, {passive:false});
+  });
+
+  nextB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index + 1, true); });
+  prevB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index - 1, true); });
+
+  // Resize
+  const ro = new ResizeObserver(()=>{ ensureStep(); go(index, false); });
+  ro.observe(root);
+  window.addEventListener('load', ()=>{ ensureStep(); go(index, false); });
+
+  // Swipe
+  const vp = root.querySelector('.vidsec__viewport');
+  let startX=0, delta=0, dragging=false;
+  const start = (x, target) => {
+    if (target && target.closest && target.closest('.vidsec__btn')) return;
+    dragging=true; startX=x; delta=0; track.style.transition='none';
+  };
+  const move  = x => { if(!dragging) return; ensureStep(); delta=x-startX; track.style.transform=`translateX(${-(index*step)+delta}px)`; };
+  const end   = () => {
+    if(!dragging) return; dragging=false; ensureStep();
+    const thr = Math.max(40, step*0.18);
+    if (delta >  thr) go(index-1, true);
+    else if (delta < -thr) go(index+1, true);
+    else go(index, true);
+  };
+
+  vp.addEventListener('pointerdown', e=>{ vp.setPointerCapture(e.pointerId); start(e.clientX, e.target); });
+  vp.addEventListener('pointermove', e=> move(e.clientX));
+  vp.addEventListener('pointerup', end);
+  vp.addEventListener('pointercancel', end);
+  vp.addEventListener('touchstart', e=> start(e.touches[0].clientX, e.target), {passive:true});
+  vp.addEventListener('touchmove',  e=> move(e.touches[0].clientX), {passive:true});
+  vp.addEventListener('touchend', end);
+
+  // Lancer/pauser les vidéos selon visibilité (boucle permanente, pas d'auto-swipe)
+  const vids = Array.from(root.querySelectorAll('video'));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const v = entry.target;
+      if (entry.isIntersecting && entry.intersectionRatio > 0.55){ try{ v.play().catch(()=>{});}catch(e){} }
+      else { try{ v.pause(); }catch(e){} }
+    });
+  }, { root: vp, threshold: [0, .55, 1] });
+  vids.forEach(v=>{
+    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden){ try{ v.play().catch(()=>{});}catch(e){} } });
+    io.observe(v);
+  });
+
+  // Position initiale
+  ensureStep(); go(index, false);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Carrousel vidéos (upload)",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "clip",
+      "name": "Vidéo",
+      "settings": [
+        { "type": "video", "id": "video", "label": "Vidéo (téléversée sur Shopify)" },
+        { "type": "url", "id": "mp4_url", "label": "OU URL .mp4 (fallback)" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "Vidéos (défilement infini)", "blocks": [{ "type": "clip" }, { "type": "clip" }, { "type": "clip" }, { "type": "clip" }] }
+  ]
+}
+{% endschema %}
