@@ -86,6 +86,7 @@
     },
     "image_with_text_overlay_zT9Tyy": {
       "type": "image-with-text-overlay",
+      "custom_css": [],
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
