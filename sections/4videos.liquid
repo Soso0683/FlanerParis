@@ -1,6 +1,5 @@
 {% comment %}
-  Section : Carrousel de vidéos (upload, loop, swipe, infini, sans titre)
-  Fichier : sections/videos-carousel.liquid
+  Section : Carrousel de vidéos (upload, loop, swipe, infini, sans titre) — FIX boutons
 {% endcomment %}
 
 <section id="vids-{{ section.id }}" class="vidsec">
@@ -40,21 +39,20 @@
   #vids-{{ section.id }}.vidsec{ --gap:16px; --radius:16px; color:#111; font-family:inherit }
   #vids-{{ section.id }} .vidsec__viewport{
     position:relative; overflow:hidden; width:100%;
-    touch-action: pan-y; /* on garde le scroll vertical, on gère le swipe en JS */
+    touch-action: pan-y;
   }
   #vids-{{ section.id }} .vidsec__track{
-    --visible:3; /* desktop par défaut */
+    --visible:3; /* desktop */
     display:flex; gap:var(--gap); align-items:stretch;
     transition:transform .5s ease; will-change:transform;
   }
-  /* 3 visibles desktop, 2 visibles mobile */
   #vids-{{ section.id }} .vidsec__item{
     flex:0 0 calc((100% - (var(--gap) * (var(--visible) - 1))) / var(--visible));
     border-radius:var(--radius); overflow:hidden; background:#000;
   }
   #vids-{{ section.id }} .vidsec__video{
     width:100%; height:100%; display:block; object-fit:cover;
-    pointer-events:none; /* pas cliquable, pas d'agrandissement */
+    pointer-events:none;
   }
   #vids-{{ section.id }} .vidsec__placeholder{
     height:220px; display:grid; place-items:center; color:#888; background:#f1f1f1
@@ -63,7 +61,7 @@
     position:absolute; top:50%; transform:translateY(-50%);
     width:36px; height:36px; border-radius:50%; border:none;
     background:#111; color:#fff; opacity:.92; display:grid; place-items:center;
-    cursor:pointer; z-index:3;
+    cursor:pointer; z-index:3; pointer-events:auto;
   }
   #vids-{{ section.id }} .vidsec__btn--prev{ left:6px }
   #vids-{{ section.id }} .vidsec__btn--next{ right:6px }
@@ -86,7 +84,9 @@
 
   const getVisible = () => parseInt(getComputedStyle(track).getPropertyValue('--visible')) || 3;
   const getStep = () => {
-    const cardW = items[0].getBoundingClientRect().width;
+    const el = items[0];
+    if (!el) return 0;
+    const cardW = el.getBoundingClientRect().width || 0;
     const gap   = parseFloat(getComputedStyle(track).gap) || 0;
     return cardW + gap;
   };
@@ -98,92 +98,23 @@
   items = Array.from(track.children);
 
   let index = cloneN;  // premier vrai
-  let step  = getStep();
+  let step  = 0;
+
+  function ensureStep(){
+    step = getStep();
+    if (step <= 0) { // fallback si layout pas encore prêt
+      const vpW = root.querySelector('.vidsec__viewport').clientWidth || 1;
+      const vis = getVisible();
+      step = (vpW / vis) + (parseFloat(getComputedStyle(track).gap) || 0);
+    }
+  }
 
   const go = (to, animate=true) => {
+    ensureStep();
     index = to;
     track.style.transition = animate ? 'transform .5s ease' : 'none';
     track.style.transform  = `translateX(${-index * step}px)`;
   };
 
-  // Bouclage quand on traverse un clone
-  track.addEventListener('transitionend', () => {
-    if (index >= orig + cloneN){ go(index - orig, false); }
-    else if (index < cloneN){    go(index + orig, false); }
-  });
-
-  // Boutons (on empêche le swipe-handler de capter leurs pointerdown)
-  nextB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index + 1, true); });
-  prevB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index - 1, true); });
-
-  // Resize
-  const ro = new ResizeObserver(()=>{ step = getStep(); go(index, false); });
-  ro.observe(root);
-
-  // Swipe (gauche/droite)
-  const vp = root.querySelector('.vidsec__viewport');
-  let startX=0, delta=0, dragging=false;
-  const start = (x, target) => {
-    if (target && target.closest && target.closest('.vidsec__btn')) return; // ignorer les clics sur boutons
-    dragging=true; startX=x; delta=0; track.style.transition='none';
-  };
-  const move  = x => { if(!dragging) return; delta=x-startX; track.style.transform=`translateX(${-(index*step)+delta}px)`; };
-  const end   = () => {
-    if(!dragging) return; dragging=false;
-    const thr = Math.max(40, step*0.18);
-    if (delta >  thr) go(index-1, true);
-    else if (delta < -thr) go(index+1, true);
-    else go(index, true);
-  };
-
-  vp.addEventListener('pointerdown', e=>{ vp.setPointerCapture(e.pointerId); start(e.clientX, e.target); });
-  vp.addEventListener('pointermove', e=> move(e.clientX));
-  vp.addEventListener('pointerup', end);
-  vp.addEventListener('pointercancel', end);
-  vp.addEventListener('touchstart', e=> start(e.touches[0].clientX, e.target), {passive:true});
-  vp.addEventListener('touchmove',  e=> move(e.touches[0].clientX), {passive:true});
-  vp.addEventListener('touchend', end);
-
-  // Lecture en boucle : on lance/re-lance quand visible (aucune auto-avance)
-  const vids = Array.from(root.querySelectorAll('video'));
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      const v = entry.target;
-      if (entry.isIntersecting && entry.intersectionRatio > 0.55){
-        try { v.play().catch(()=>{}); } catch(e){}
-      } else {
-        try { v.pause(); } catch(e){}
-      }
-    });
-  }, { root: vp, threshold: [0, .55, 1] });
-  vids.forEach(v=>{
-    // quand on revient à l’onglet, relancer
-    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden){ try{ v.play().catch(()=>{});}catch(e){} } });
-    io.observe(v);
-  });
-
-  // Position initiale
-  go(index, false);
-})();
-</script>
-
-{% schema %}
-{
-  "name": "Carrousel vidéos (upload)",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "clip",
-      "name": "Vidéo",
-      "settings": [
-        { "type": "video", "id": "video", "label": "Vidéo (téléversée sur Shopify)" },
-        { "type": "url", "id": "mp4_url", "label": "OU URL .mp4 (fallback)" }
-      ]
-    }
-  ],
-  "max_blocks": 12,
-  "presets": [
-    { "name": "Vidéos (défilement infini)", "blocks": [{ "type": "clip" }, { "type": "clip" }, { "type": "clip" }, { "type": "clip" }] }
-  ]
-}
-{% endschema %}
+  // Bouclage
+  track.addEventListe
