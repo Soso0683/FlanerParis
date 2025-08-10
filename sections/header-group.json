@@ -17,44 +17,20 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "SOMMER-SALE: -50 %",
-            "url": ""
-          }
-        },
-        "message_G9wUwX": {
-          "type": "message",
-          "settings": {
-            "text": "SCHLUSS MIT TEUREN BEHANDLUNGEN",
-            "url": ""
-          }
-        },
-        "message_6dcCwz": {
-          "type": "message",
-          "settings": {
-            "text": "90 TAGE ZUFRIEDEN ODER GELD ZURÜCK",
-            "url": ""
-          }
-        },
-        "message_jpmkgK": {
-          "type": "message",
-          "settings": {
-            "text": "KOSTENLOSER VERSAND",
+            "text": "SOMMER-SALE: BIS ZU -50 % + KOSTENLOSER VERSAND",
             "url": ""
           }
         }
       },
       "block_order": [
-        "message",
-        "message_G9wUwX",
-        "message_6dcCwz",
-        "message_jpmkgK"
+        "message"
       ],
       "settings": {
         "enable_sticky": false,
         "autoplay": false,
         "cycle_speed": 6,
         "text_size": "text-xs",
-        "navigation_mode": "scrolling",
+        "navigation_mode": "arrows",
         "scrolling_speed": 10,
         "background": "#1a1a1a",
         "background_gradient": "",
