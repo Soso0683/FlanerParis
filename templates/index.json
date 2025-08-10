@@ -919,12 +919,36 @@
             "title": "Ist die Maske für empfindliche Haut geeignet?",
             "content": "<p><strong>Ja, absolut.</strong> Unsere Maske ist dermatologisch getestet und sanft genug für <strong>alle Hauttypen</strong>, auch für empfindliche Haut. Bei Unsicherheit führen Sie vor der ersten Anwendung bitte einen <strong>Patch-Test</strong> auf einer kleinen Hautstelle durch.</p>"
           }
+        },
+        "item_Ai94QR": {
+          "type": "item",
+          "settings": {
+            "title": "Wie lange dauert es, bis man Ergebnisse sieht?",
+            "content": "<p>Viele Kundinnen bemerken bereits <strong>nach der ersten Anwendung</strong> eine Verbesserung von Feuchtigkeit und Hauttextur. Für sichtbarere Resultate (weniger feine Linien, festere Haut) wird eine <strong>regelmäßige Anwendung über 2–4 Wochen</strong> empfohlen.</p>"
+          }
+        },
+        "item_xrbrfh": {
+          "type": "item",
+          "settings": {
+            "title": "Question",
+            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+          }
+        },
+        "item_bNBg4x": {
+          "type": "item",
+          "settings": {
+            "title": "Question",
+            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+          }
         }
       },
       "block_order": [
         "166442457738b23caf-0",
         "166442457738b23caf-1",
-        "166442457738b23caf-2"
+        "166442457738b23caf-2",
+        "item_Ai94QR",
+        "item_xrbrfh",
+        "item_bNBg4x"
       ],
       "settings": {
         "full_width": false,
