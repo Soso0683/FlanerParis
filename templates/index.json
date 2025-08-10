@@ -69,19 +69,17 @@
         "text_color": ""
       }
     },
-    "scrolling-text": {
-      "type": "scrolling-text",
+    "custom_liquid_tdNe9b": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
       "settings": {
         "full_width": true,
-        "text": "Schluss mit teuren Behandlungen | 90 Tage zufrieden oder Geld zurück | Kostenloser Versand",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 6,
-        "background": "#000000",
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div class=\"promo-marquee\" role=\"region\" aria-label=\"Bandeau promo défilant\">\n  <!-- PISTE 1 -->\n  <div class=\"promo-track\">\n    <span class=\"promo-item\">Schluss mit teuren Behandlungen</span>\n    <span class=\"promo-sep\">|</span>\n    <span class=\"promo-item\">90 Tage zufrieden oder Geld zurück</span>\n    <span class=\"promo-sep\">|</span>\n    <span class=\"promo-item\">KOSTENLOSER VERSAND</span>\n  </div>\n  <!-- PISTE 2 -->\n  <div class=\"promo-track\" aria-hidden=\"true\">\n    <span class=\"promo-item\">Schluss mit teuren Behandlungen</span>\n    <span class=\"promo-sep\">|</span>\n    <span class=\"promo-item\">90 Tage zufrieden oder Geld zurück</span>\n    <span class=\"promo-sep\">|</span>\n    <span class=\"promo-item\">KOSTENLOSER VERSAND</span>\n  </div>\n</div>\n\n<style>\n  .promo-marquee{\n    --height: 40px;         /* hauteur bandeau */\n    --speed: 28s;           /* vitesse défilement */\n    --gap: 80px;            /* espace entre messages */\n    --bg: #111;             /* fond */\n    --txt: #fff;            /* texte */\n    --weight: 700;          /* épaisseur texte */\n\n    position: relative;\n    overflow: hidden;\n    background: var(--bg);\n    color: var(--txt);\n    height: var(--height);\n    line-height: var(--height);\n    white-space: nowrap;\n    font-weight: var(--weight);\n    font-size: 18px;\n\n    width: 100vw;       \n    margin-left: calc(-50vw + 50%);\n  }\n\n  .promo-track{\n    position: absolute;\n    top: 0; left: 0;\n    display: inline-flex;\n    align-items: center;\n    gap: var(--gap);\n    padding-left: 100%;\n    animation: promo-marquee var(--speed) linear infinite;\n  }\n\n  .promo-item{ display:inline-block; }\n  .promo-sep{ opacity: .9; }\n\n  .promo-marquee:hover .promo-track{ animation-play-state: paused; }\n\n  @keyframes promo-marquee{\n    to { transform: translateX(-100%); }\n  }\n\n  @media (max-width: 640px){\n    .promo-marquee{\n      --height: 36px;\n      --gap: 60px;\n      font-size: 16px;\n    }\n  }\n</style>",
+        "background": "",
         "background_gradient": "",
-        "text_color": "#ffffff",
-        "text_gradient": ""
+        "text_color": ""
       }
     },
     "collection-list": {
@@ -682,7 +680,7 @@
     "image_with_text_overlay_NzAfii",
     "custom_liquid_BEbTB7",
     "custom_liquid_VNcGQx",
-    "scrolling-text",
+    "custom_liquid_tdNe9b",
     "collection-list",
     "featured-collection",
     "impact-text",
