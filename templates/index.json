@@ -29,25 +29,26 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
+        "image": "shopify://shop_images/homepage-mobile_f524a741-3bdc-4eff-a0b0-3be9af8add05.jpg",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 0
       }
     },
     "rich_text_EkkXfA": {
       "type": "rich-text",
       "blocks": {
-        "richtext_gyqVyh": {
+        "richtext_mmFHaN": {
           "type": "richtext",
           "settings": {
-            "content": "<h2>Klinisch bewiesen: Sichtbare Ergebnisse ab der 1. Anwendung</h2>"
+            "content": "<p><strong>Klinisch bewiesen:</strong> Sichtbare Ergebnisse ab <strong>der 1. Anwendung</strong></p>"
           }
         }
       },
       "block_order": [
-        "richtext_gyqVyh"
+        "richtext_mmFHaN"
       ],
       "name": "Rich text",
       "settings": {
