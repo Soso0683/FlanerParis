@@ -238,6 +238,9 @@
         "item_CKcQMc",
         "item_WXYdRk"
       ],
+      "custom_css": [
+        ".section-full {padding-top: 10px; padding-bottom: 0px;}"
+      ],
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -247,6 +250,35 @@
         "subheading": "",
         "title": "",
         "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_QEmChQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ET9iBf": {
+          "type": "heading",
+          "settings": {
+            "text": "Gesehen auf :",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ET9iBf"
+      ],
+      "custom_css": [
+        ".section-full {padding-top: 0px; padding-bottom: 0px;}"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -314,6 +346,7 @@
     "rich_text_tKz6U9",
     "custom_liquid_KJDMcJ",
     "multi_column_KKJRHK",
+    "rich_text_QEmChQ",
     "faq"
   ]
 }
