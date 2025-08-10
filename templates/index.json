@@ -937,8 +937,8 @@
         "item_bNBg4x": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Kann ich die Maske zusammen mit meinen anderen Pflegeprodukten verwenden?",
+            "content": "<p><strong>Natürlich.</strong> Sie können sie nach Ihrem gewohnten <strong>Toner, Serum oder Ihrer Feuchtigkeitscreme</strong> auftragen. Das kann die Wirksamkeit Ihrer gesamten Routine sogar <strong>unterstützen</strong>.</p>"
           }
         }
       },
