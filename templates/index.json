@@ -43,6 +43,9 @@
     },
     "custom_liquid_tdNe9b": {
       "type": "custom-liquid",
+      "custom_css": [
+        ".section-full {padding-top: 10px; padding-bottom: 15px;}"
+      ],
       "name": "Custom Liquid",
       "settings": {
         "full_width": true,
