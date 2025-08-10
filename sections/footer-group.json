@@ -39,11 +39,39 @@
             "title": "Kundenservice 7 Tage die Woche",
             "content": ""
           }
+        },
+        "item_3MPqHN": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-lock",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#ffb700",
+            "icon_color": "",
+            "title": "Sichere Zahlung",
+            "content": ""
+          }
+        },
+        "item_WWMBcJ": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Heading",
+            "content": "<p>Short content about your store</p>"
+          }
         }
       },
       "block_order": [
         "free-shipping",
-        "item_VTTHQA"
+        "item_VTTHQA",
+        "item_3MPqHN",
+        "item_WWMBcJ"
       ],
       "settings": {
         "full_width": true,
