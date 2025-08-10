@@ -886,6 +886,16 @@
         "text_color": ""
       }
     },
+    "fondnoir_QM8eNm": {
+      "type": "fondnoir",
+      "name": "90-Tage Garantie",
+      "settings": {
+        "badge": "shopify://shop_images/logo_scholl_6.png",
+        "badge_alt": "90 Tage – zufrieden oder Geld zurück",
+        "title": "Testen Sie die Seoulume-Maske ganz unbesorgt – mit unserer 90-Tage-Geld-zurück-Garantie!",
+        "text": "<p>Von ihrer Wirksamkeit überzeugt, bieten wir Ihnen eine 90-Tage-Zufriedenheitsgarantie.</p><p>Sollten Sie die erwarteten Ergebnisse nicht erzielen, erstatten wir Ihnen den vollen Betrag.</p><p></p>"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -961,6 +971,7 @@
     "multi_column_tKFQat",
     "image_with_text_overlay_AAkfHE",
     "rich_text_XYnXFa",
+    "fondnoir_QM8eNm",
     "faq"
   ]
 }
