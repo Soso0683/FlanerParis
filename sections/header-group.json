@@ -21,6 +21,20 @@
             "url": ""
           }
         },
+        "message_G9wUwX": {
+          "type": "message",
+          "settings": {
+            "text": "SCHLUSS MIT TEUREN BEHANDLUNGEN",
+            "url": ""
+          }
+        },
+        "message_6dcCwz": {
+          "type": "message",
+          "settings": {
+            "text": "90 TAGE ZUFRIEDEN ODER GELD ZURÜCK",
+            "url": ""
+          }
+        },
         "message_jpmkgK": {
           "type": "message",
           "settings": {
@@ -31,6 +45,8 @@
       },
       "block_order": [
         "message",
+        "message_G9wUwX",
+        "message_6dcCwz",
         "message_jpmkgK"
       ],
       "settings": {
