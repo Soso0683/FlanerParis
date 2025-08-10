@@ -940,6 +940,13 @@
             "title": "Kann ich die Maske zusammen mit meinen anderen Pflegeprodukten verwenden?",
             "content": "<p><strong>Natürlich.</strong> Sie können sie nach Ihrem gewohnten <strong>Toner, Serum oder Ihrer Feuchtigkeitscreme</strong> auftragen. Das kann die Wirksamkeit Ihrer gesamten Routine sogar <strong>unterstützen</strong>.</p>"
           }
+        },
+        "item_D6pbYW": {
+          "type": "item",
+          "settings": {
+            "title": "Wie lange beträgt die Lieferzeit?",
+            "content": "<p>Die Zustellung dauert <strong>8–10 Werktage</strong>. Sie erhalten <strong>E-Mail-Updates</strong> zum Status Ihrer Bestellung.</p>"
+          }
         }
       },
       "block_order": [
@@ -948,7 +955,8 @@
         "166442457738b23caf-2",
         "item_Ai94QR",
         "item_xrbrfh",
-        "item_bNBg4x"
+        "item_bNBg4x",
+        "item_D6pbYW"
       ],
       "settings": {
         "full_width": false,
