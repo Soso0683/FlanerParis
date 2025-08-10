@@ -347,6 +347,14 @@
             "liquid": "{% assign uid = 'checks-' | append: 'now' | date: '%s' %}\n\n<div id=\"{{ uid }}\" class=\"de-checks\">\n  <ul class=\"de-checks__list\" role=\"list\">\n    <li class=\"de-checks__item\">\n      <svg class=\"de-checks__ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n        <circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/>\n        <path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n      <span><strong>Strahlender Teint schon beim Aufwachen</strong></span>\n    </li>\n    <li class=\"de-checks__item\">\n      <svg class=\"de-checks__ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n        <circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/>\n        <path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n      <span><strong>Tiefenwirksam genährte Haut</strong></span>\n    </li>\n    <li class=\"de-checks__item\">\n      <svg class=\"de-checks__ico\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n        <circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/>\n        <path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n      <span><strong>Sichtbar geglättete Falten</strong></span>\n    </li>\n  </ul>\n</div>\n\n<style>\n  #{{ uid }}.de-checks{font-family:inherit;color:#111}\n  #{{ uid }} .de-checks__list{list-style:none;margin:0;padding:0;display:grid;gap:8px}\n  #{{ uid }} .de-checks__item{display:flex;align-items:center;gap:8px;line-height:1.35}\n  #{{ uid }} .de-checks__ico{width:16px;height:16px;flex:0 0 16px;display:block}\n</style>"
           }
         },
+        "image_rwPgwi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bienfaits_mobile.png",
+            "alignment": "center",
+            "max_width": 500
+          }
+        },
         "rating_btiaWF": {
           "type": "rating",
           "settings": {
@@ -420,6 +428,7 @@
         "badges_fVYgHn",
         "price_CFxeLY",
         "liquid_6HnqRE",
+        "image_rwPgwi",
         "rating_btiaWF",
         "description_LHUreh",
         "kaching_bundles_app_block_UrLLKM",
