@@ -767,6 +767,7 @@
         "item_py9rwL": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/curcuma_b08f1ab3-6a02-4068-96ef-e4e31ba89620.jpg",
             "column_size": "3",
             "title": "Kurkuma",
             "heading_tag": "h4",
@@ -779,6 +780,7 @@
         "item_Bp3K4x": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/5.jpg",
             "column_size": "3",
             "title": "Kollagen",
             "heading_tag": "h4",
@@ -791,6 +793,7 @@
         "item_RRCa6R": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/vitamine_C.jpg",
             "column_size": "3",
             "title": "Vitamin C",
             "heading_tag": "h4",
@@ -803,6 +806,7 @@
         "item_HcMdjA": {
           "type": "item",
           "settings": {
+            "image": "shopify://shop_images/6.jpg",
             "column_size": "3",
             "title": "Retinol",
             "heading_tag": "h4",
