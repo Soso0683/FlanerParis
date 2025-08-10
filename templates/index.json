@@ -995,6 +995,39 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
+    },
+    "rich_text_JGCnVc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bUGDaV": {
+          "type": "heading",
+          "settings": {
+            "text": "Sie haben nicht die gesuchte Antwort gefunden?",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_bUWqYF": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h4>Unser Team ist für Sie da!</h4>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bUGDaV",
+        "richtext_bUWqYF"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -1021,6 +1054,7 @@
     "rich_text_XYnXFa",
     "fondnoir_QM8eNm",
     "faq",
-    "image_with_text_overlay_CehwwN"
+    "image_with_text_overlay_CehwwN",
+    "rich_text_JGCnVc"
   ]
 }
