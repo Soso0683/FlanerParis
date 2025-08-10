@@ -902,8 +902,8 @@
         "166442457738b23caf-0": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Warum sollte ich nur auf unserer offiziellen Website kaufen?",
+            "content": "<p>Unsere Produkte sind ausschließlich über unsere offizielle Website erhältlich. Verkäufe über Drittplattformen (z. B. Amazon) beziehen sich auf minderwertige Fälschungen. Um <strong>Authentizität und Qualität</strong> zu gewährleisten, kaufen Sie ausschließlich bei uns. Für anderswo gekaufte Produkte übernehmen wir <strong>keine Haftung</strong>.</p>"
           }
         },
         "166442457738b23caf-1": {
@@ -929,8 +929,8 @@
       "settings": {
         "full_width": false,
         "subheading": "",
-        "title": "FAQ",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "title": "Häufig gestellte Fragen",
+        "content": "",
         "team_avatar_width": 160,
         "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
         "answer_time": "Average answer time: 24h",
