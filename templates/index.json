@@ -716,6 +716,64 @@
         "text_color": ""
       }
     },
+    "4logos_LGJkY7": {
+      "type": "4logos",
+      "blocks": {
+        "item_VMTefk": {
+          "type": "item",
+          "settings": {
+            "icon_image": "shopify://shop_images/humidity_1_1.webp",
+            "icon_alt": "Icône",
+            "emoji": "💧",
+            "line1": "Fettige",
+            "line2": "Haut"
+          }
+        },
+        "item_qNpYPj": {
+          "type": "item",
+          "settings": {
+            "icon_image": "shopify://shop_images/hair_1_1.webp",
+            "icon_alt": "Icône",
+            "emoji": "🧴",
+            "line1": "Peau",
+            "line2": "sensible"
+          }
+        },
+        "item_9QMch7": {
+          "type": "item",
+          "settings": {
+            "icon_image": "shopify://shop_images/wind.webp",
+            "icon_alt": "Icône",
+            "emoji": "🌬️",
+            "line1": "Peau",
+            "line2": "sèche"
+          }
+        },
+        "item_pPmPKV": {
+          "type": "item",
+          "settings": {
+            "icon_image": "shopify://shop_images/natural-dyes.webp",
+            "icon_alt": "Icône",
+            "emoji": "🍃",
+            "line1": "Peau",
+            "line2": "mature"
+          }
+        }
+      },
+      "block_order": [
+        "item_VMTefk",
+        "item_qNpYPj",
+        "item_9QMch7",
+        "item_pPmPKV"
+      ],
+      "name": "Pictos peau",
+      "settings": {
+        "icon_size": 56,
+        "text_size": 18,
+        "gap": 28,
+        "text_color": "#111111"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -788,6 +846,7 @@
     "4videos_aiyPqN",
     "rich_text_iwy89w",
     "custom_liquid_cCXwdf",
+    "4logos_LGJkY7",
     "faq"
   ]
 }
