@@ -82,6 +82,32 @@
         "text_color": ""
       }
     },
+    "rich_text_tKz6U9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_zJfCKz": {
+          "type": "heading",
+          "settings": {
+            "text": "Mehr als 5800 Frauen haben es bereits adoptiert, und Sie?",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_zJfCKz"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "collection-list": {
       "type": "collection-list",
       "blocks": {
@@ -681,6 +707,7 @@
     "custom_liquid_BEbTB7",
     "custom_liquid_VNcGQx",
     "custom_liquid_tdNe9b",
+    "rich_text_tKz6U9",
     "collection-list",
     "featured-collection",
     "impact-text",
