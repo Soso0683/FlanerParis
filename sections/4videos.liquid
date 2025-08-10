@@ -1,13 +1,9 @@
 {% comment %}
-  Section : Carrousel de vidéos (upload, auto-avance à la fin, swipe, infini)
+  Section : Carrousel de vidéos (upload, loop, swipe, infini, sans titre)
   Fichier : sections/videos-carousel.liquid
 {% endcomment %}
 
 <section id="vids-{{ section.id }}" class="vidsec">
-  {% if section.settings.heading != blank %}
-    <h2 class="vidsec__title">{{ section.settings.heading }}</h2>
-  {% endif %}
-
   <div class="vidsec__viewport">
     <button class="vidsec__btn vidsec__btn--prev" aria-label="Précédent" type="button">‹</button>
 
@@ -20,7 +16,7 @@
                 class: 'vidsec__video',
                 autoplay: true,
                 muted: true,
-                loop: false,
+                loop: true,
                 playsinline: true,
                 controls: false,
                 preload: 'auto'
@@ -28,7 +24,7 @@
           {% elsif block.settings.mp4_url != blank %}
             <video class="vidsec__video"
                    src="{{ block.settings.mp4_url }}"
-                   autoplay muted playsinline preload="auto"></video>
+                   autoplay muted loop playsinline preload="auto"></video>
           {% else %}
             <div class="vidsec__placeholder">Video fehlt</div>
           {% endif %}
@@ -42,9 +38,10 @@
 
 <style>
   #vids-{{ section.id }}.vidsec{ --gap:16px; --radius:16px; color:#111; font-family:inherit }
-  #vids-{{ section.id }} .vidsec__title{ margin:0 0 14px; text-align:center }
-
-  #vids-{{ section.id }} .vidsec__viewport{ position:relative; overflow:hidden; width:100% }
+  #vids-{{ section.id }} .vidsec__viewport{
+    position:relative; overflow:hidden; width:100%;
+    touch-action: pan-y; /* on garde le scroll vertical, on gère le swipe en JS */
+  }
   #vids-{{ section.id }} .vidsec__track{
     --visible:3; /* desktop par défaut */
     display:flex; gap:var(--gap); align-items:stretch;
@@ -57,7 +54,7 @@
   }
   #vids-{{ section.id }} .vidsec__video{
     width:100%; height:100%; display:block; object-fit:cover;
-    pointer-events:none; /* pas cliquable */
+    pointer-events:none; /* pas cliquable, pas d'agrandissement */
   }
   #vids-{{ section.id }} .vidsec__placeholder{
     height:220px; display:grid; place-items:center; color:#888; background:#f1f1f1
@@ -66,7 +63,7 @@
     position:absolute; top:50%; transform:translateY(-50%);
     width:36px; height:36px; border-radius:50%; border:none;
     background:#111; color:#fff; opacity:.92; display:grid; place-items:center;
-    cursor:pointer; z-index:2;
+    cursor:pointer; z-index:3;
   }
   #vids-{{ section.id }} .vidsec__btn--prev{ left:6px }
   #vids-{{ section.id }} .vidsec__btn--next{ right:6px }
@@ -96,41 +93,40 @@
 
   // Clones pour boucle infinie
   let cloneN = Math.min(getVisible(), orig);
-  // fin -> début
   for(let i=orig-cloneN; i<orig; i++){ track.insertBefore(items[i].cloneNode(true), track.firstChild); }
-  // début -> fin
   for(let i=0; i<cloneN; i++){ track.appendChild(items[i].cloneNode(true)); }
   items = Array.from(track.children);
 
-  let index = cloneN;     // commence sur le 1er vrai
+  let index = cloneN;  // premier vrai
   let step  = getStep();
 
   const go = (to, animate=true) => {
     index = to;
     track.style.transition = animate ? 'transform .5s ease' : 'none';
     track.style.transform  = `translateX(${-index * step}px)`;
-    // (re)lancer les vidéos visibles
-    playVisible();
   };
 
-  // Réglage quand on traverse un clone
+  // Bouclage quand on traverse un clone
   track.addEventListener('transitionend', () => {
     if (index >= orig + cloneN){ go(index - orig, false); }
     else if (index < cloneN){    go(index + orig, false); }
   });
 
-  // Boutons
-  nextB.addEventListener('click', ()=> go(index + 1, true));
-  prevB.addEventListener('click', ()=> go(index - 1, true));
+  // Boutons (on empêche le swipe-handler de capter leurs pointerdown)
+  nextB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index + 1, true); });
+  prevB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index - 1, true); });
 
   // Resize
   const ro = new ResizeObserver(()=>{ step = getStep(); go(index, false); });
   ro.observe(root);
 
-  // Swipe
+  // Swipe (gauche/droite)
   const vp = root.querySelector('.vidsec__viewport');
   let startX=0, delta=0, dragging=false;
-  const start = x => { dragging=true; startX=x; delta=0; track.style.transition='none'; };
+  const start = (x, target) => {
+    if (target && target.closest && target.closest('.vidsec__btn')) return; // ignorer les clics sur boutons
+    dragging=true; startX=x; delta=0; track.style.transition='none';
+  };
   const move  = x => { if(!dragging) return; delta=x-startX; track.style.transform=`translateX(${-(index*step)+delta}px)`; };
   const end   = () => {
     if(!dragging) return; dragging=false;
@@ -139,43 +135,30 @@
     else if (delta < -thr) go(index+1, true);
     else go(index, true);
   };
-  vp.addEventListener('pointerdown', e=>{ vp.setPointerCapture(e.pointerId); start(e.clientX); });
+
+  vp.addEventListener('pointerdown', e=>{ vp.setPointerCapture(e.pointerId); start(e.clientX, e.target); });
   vp.addEventListener('pointermove', e=> move(e.clientX));
   vp.addEventListener('pointerup', end);
   vp.addEventListener('pointercancel', end);
-  vp.addEventListener('touchstart', e=> start(e.touches[0].clientX), {passive:true});
+  vp.addEventListener('touchstart', e=> start(e.touches[0].clientX, e.target), {passive:true});
   vp.addEventListener('touchmove',  e=> move(e.touches[0].clientX), {passive:true});
   vp.addEventListener('touchend', end);
 
-  // Lecture auto des vidéos visibles + auto-avance quand une vidéo visible se termine
+  // Lecture en boucle : on lance/re-lance quand visible (aucune auto-avance)
   const vids = Array.from(root.querySelectorAll('video'));
-  let advancing = false;
-  const safeNext = () => {
-    if (advancing) return;
-    advancing = true;
-    go(index + 1, true);
-    setTimeout(()=> advancing = false, 400);
-  };
-
-  // Jouer/Pause en fonction de la visibilité
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       const v = entry.target;
       if (entry.isIntersecting && entry.intersectionRatio > 0.55){
-        try { if (v.paused) { v.currentTime = 0; v.play().catch(()=>{}); } } catch(e){}
-        // écoute 'ended' uniquement quand bien visible
-        v.onended = safeNext;
+        try { v.play().catch(()=>{}); } catch(e){}
       } else {
         try { v.pause(); } catch(e){}
-        v.onended = null;
       }
     });
   }, { root: vp, threshold: [0, .55, 1] });
-
   vids.forEach(v=>{
-    // s'assurer que l'autoplay redémarre quand on revient sur l'onglet
-    const tryPlay = ()=> v.play().catch(()=>{});
-    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) tryPlay(); });
+    // quand on revient à l’onglet, relancer
+    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden){ try{ v.play().catch(()=>{});}catch(e){} } });
     io.observe(v);
   });
 
@@ -187,9 +170,7 @@
 {% schema %}
 {
   "name": "Carrousel vidéos (upload)",
-  "settings": [
-    { "type": "text", "id": "heading", "label": "Titre", "default": "Des résultats concrets" }
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "clip",
