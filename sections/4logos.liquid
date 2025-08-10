@@ -1,0 +1,96 @@
+{% comment %} Section : Pictos (grille responsive 2x2 mobile / 4 desktop) — fix defaults {% endcomment %}
+
+<section id="pictos-{{ section.id }}" class="pictos"
+  style="
+    --gap: {{ section.settings.gap | default: 28 }}px;
+    --icon: {{ section.settings.icon_size | default: 56 }}px;
+    --txt: {{ section.settings.text_size | default: 18 }}px;
+    --color: {{ section.settings.text_color | default: '#111111' }};
+  ">
+  <div class="pictos__grid">
+    {%- for block in section.blocks -%}
+      {%- assign l2 = block.settings.line2 | default: '-' | strip -%}
+      <div class="pictos__item" {{ block.shopify_attributes }}>
+        <div class="pictos__icon" aria-hidden="true">
+          {%- if block.settings.icon_image != blank -%}
+            <img
+              src="{{ block.settings.icon_image | img_url: '160x160' }}"
+              alt="{{ block.settings.icon_alt | escape }}"
+              width="{{ section.settings.icon_size | default: 56 }}"
+              height="{{ section.settings.icon_size | default: 56 }}"
+              loading="lazy">
+          {%- elsif block.settings.emoji != blank -%}
+            <span class="pictos__emoji">{{ block.settings.emoji }}</span>
+          {%- else -%}
+            <svg viewBox="0 0 24 24" class="pictos__svg">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          {%- endif -%}
+        </div>
+        <div class="pictos__label">
+          {{ block.settings.line1 | escape }}
+          {%- if l2 != '-' and l2 != '' -%}<br>{{ l2 | escape }}{%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+<style>
+  #pictos-{{ section.id }}.pictos{ color:var(--color); font-family:inherit }
+  #pictos-{{ section.id }} .pictos__grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr)); /* mobile */
+    gap: var(--gap);
+    align-items:start;
+    justify-items:center;
+  }
+  @media (min-width: 900px){
+    #pictos-{{ section.id }} .pictos__grid{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+  }
+  #pictos-{{ section.id }} .pictos__item{ text-align:center }
+  #pictos-{{ section.id }} .pictos__icon{
+    width:var(--icon); height:var(--icon); margin:0 auto 8px; display:grid; place-items:center;
+  }
+  #pictos-{{ section.id }} .pictos__icon img{ width:100%; height:100%; object-fit:contain; display:block }
+  #pictos-{{ section.id }} .pictos__emoji{ font-size: calc(var(--icon) * 0.9); line-height:1 }
+  #pictos-{{ section.id }} .pictos__svg{ width:100%; height:100%; display:block }
+  #pictos-{{ section.id }} .pictos__label{ font-size:var(--txt); line-height:1.25; font-weight:500; word-break:keep-all }
+</style>
+
+{% schema %}
+{
+  "name": "Pictos peau (grille)",
+  "settings": [
+    { "type": "range", "id": "icon_size", "label": "Taille des pictos (px)", "min": 32, "max": 96, "step": 2, "default": 56 },
+    { "type": "range", "id": "text_size", "label": "Taille du texte (px)", "min": 12, "max": 24, "step": 1, "default": 18 },
+    { "type": "range", "id": "gap", "label": "Espace entre items (px)", "min": 8, "max": 48, "step": 2, "default": 28 },
+    { "type": "color", "id": "text_color", "label": "Couleur du texte", "default": "#111111" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Picto",
+      "settings": [
+        { "type": "image_picker", "id": "icon_image", "label": "Pictogramme (image)" },
+        { "type": "text", "id": "icon_alt", "label": "Alt de l’icône", "default": "Icône" },
+        { "type": "text", "id": "emoji", "label": "…ou Emoji (ex: 💧, 🍃)", "default": "•", "info": "Sera utilisé si aucune image n’est fournie." },
+        { "type": "text", "id": "line1", "label": "Texte ligne 1", "default": "Peau grasse" },
+        { "type": "text", "id": "line2", "label": "Texte ligne 2 (mettez « - » pour ne pas afficher)", "default": "-" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Pictos peau",
+      "blocks": [
+        { "type": "item", "settings": { "emoji": "💧", "line1": "Peau", "line2": "grasse" } },
+        { "type": "item", "settings": { "emoji": "🧴", "line1": "Peau", "line2": "sensible" } },
+        { "type": "item", "settings": { "emoji": "🌬️", "line1": "Peau", "line2": "sèche" } },
+        { "type": "item", "settings": { "emoji": "🍃", "line1": "Peau", "line2": "mature" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
