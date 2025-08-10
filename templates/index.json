@@ -952,8 +952,8 @@
         "title": "Häufig gestellte Fragen",
         "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "",
+        "answer_time": "",
         "button_text": "",
         "button_url": "",
         "text_position": "start",
@@ -1001,11 +1001,18 @@
           "settings": {
             "content": "<h4>Unser Team ist für Sie da!</h4>"
           }
+        },
+        "richtext_Tgrrtd": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Unser Kundenservice ist 7 </p><p>Tage die Woche erreichbar.Durchschnittliche Antwortzeit: 24 Std.</p>"
+          }
         }
       },
       "block_order": [
         "heading_bUGDaV",
-        "richtext_bUWqYF"
+        "richtext_bUWqYF",
+        "richtext_Tgrrtd"
       ],
       "name": "Rich text",
       "settings": {
