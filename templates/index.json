@@ -677,21 +677,17 @@
       "name": "Vidéos (défilement infini)",
       "settings": {}
     },
-    "image_with_text_overlay_wp8djy": {
-      "type": "image-with-text-overlay",
-      "name": "Image with text overlay",
+    "custom_liquid_cCXwdf": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
       "settings": {
         "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/tube-curcuma_107953a3-db6d-436d-9df1-c79a4bdde968.jpg",
-        "mobile_image": "shopify://shop_images/tube-curcuma_107953a3-db6d-436d-9df1-c79a4bdde968.jpg",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "{% assign uid = 'featsimg-' | append: 'now' | date: '%s' %}\n{% assign mid_img = 'https://cdn.shopify.com/s/files/1/0937/6546/8502/files/logo_scholl_5.png?v=1754840641?v=1754840047' %}\n\n<div id=\"{{ uid }}\" class=\"de-feats-img\" aria-label=\"Vorteile Seoulume\">\n  <div class=\"de-feats-img__grid\">\n\n    <!-- Colonne gauche -->\n    <ul class=\"de-feats__list\" role=\"list\">\n      <li class=\"de-feats__item\">\n        <span class=\"de-feats__icon\" aria-hidden=\"true\">\n          <svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/><path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>\n        </span>\n        <div class=\"de-feats__text\">\n          <div class=\"de-feats__title\"><strong>Sichtbar weniger Falten</strong></div>\n          <div class=\"de-feats__desc\">Sanftes Retinol und Kollagen helfen, Falten und feine Linien über Nacht zu mildern.</div>\n        </div>\n      </li>\n\n      <li class=\"de-feats__item\">\n        <span class=\"de-feats__icon\" aria-hidden=\"true\">\n          <svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/><path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>\n        </span>\n        <div class=\"de-feats__text\">\n          <div class=\"de-feats__title\"><strong>Mehr Elastizität &amp; Festigkeit</strong></div>\n          <div class=\"de-feats__desc\">Kollagen stärkt die Hautspannung und verleiht ihr wieder mehr Sprungkraft.</div>\n        </div>\n      </li>\n    </ul>\n\n    <!-- Image centrale -->\n    <figure class=\"de-feats-img__media\">\n      <div class=\"de-feats-img__circle\">\n        <img src=\"{{ mid_img }}\" alt=\"Seoulume – Kollagen-Nachtmaske\" loading=\"lazy\" decoding=\"async\">\n      </div>\n    </figure>\n\n    <!-- Colonne droite -->\n    <ul class=\"de-feats__list\" role=\"list\">\n      <li class=\"de-feats__item\">\n        <span class=\"de-feats__icon\" aria-hidden=\"true\">\n          <svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/><path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>\n        </span>\n        <div class=\"de-feats__text\">\n          <div class=\"de-feats__title\"><strong>Natürliche Leuchtkraft wecken</strong></div>\n          <div class=\"de-feats__desc\">Dank Kurkuma und Vitamin&nbsp;C wirkt der Teint ebenmäßiger und strahlender.</div>\n        </div>\n      </li>\n\n      <li class=\"de-feats__item\">\n        <span class=\"de-feats__icon\" aria-hidden=\"true\">\n          <svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"#111\"/><path d=\"M17.2 8.8l-6 6-2.4-2.4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>\n        </span>\n        <div class=\"de-feats__text\">\n          <div class=\"de-feats__title\"><strong>Intensive Feuchtigkeit über Nacht</strong></div>\n          <div class=\"de-feats__desc\">Die Seoulume Maske bildet einen leichten Film, der Feuchtigkeit speichert und die Haut tiefenwirksam nährt.</div>\n        </div>\n      </li>\n    </ul>\n\n  </div>\n</div>\n\n<style>\n  #{{ uid }}.de-feats-img{ color:#111; font-family:inherit }\n  #{{ uid }} .de-feats-img__grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center }\n  @media (min-width:900px){\n    #{{ uid }} .de-feats-img__grid{ grid-template-columns:1fr minmax(320px,420px) 1fr; gap:36px }\n  }\n\n  /* listes + items */\n  #{{ uid }} .de-feats__list{ list-style:none; margin:0; padding:0; display:grid; gap:18px }\n  #{{ uid }} .de-feats__item{ display:flex; align-items:flex-start; gap:10px }\n  #{{ uid }} .de-feats__icon{ width:18px; height:18px; flex:0 0 18px; line-height:0; display:block }\n  #{{ uid }} .de-feats__icon svg{ width:100%; height:100%; display:block } /* garantit l'affichage */\n  #{{ uid }} .de-feats__title{ font-size:16px; line-height:1.35 }\n  #{{ uid }} .de-feats__desc{ color:#555; margin-top:4px; font-size:15px; line-height:1.5 }\n\n  /* image centrale */\n  #{{ uid }} .de-feats-img__media{ margin:0 }\n  #{{ uid }} .de-feats-img__circle{\n    aspect-ratio:1/1; width:100%; max-width:420px; margin:0 auto;\n    border-radius:50%; background:#f2f2f2; display:grid; place-items:center; overflow:hidden;\n  }\n  #{{ uid }} .de-feats-img__circle img{ width:88%; height:auto; display:block; object-fit:contain; pointer-events:none }\n\n  @media (max-width:640px){\n    #{{ uid }} .de-feats__title{ font-size:15px }\n    #{{ uid }} .de-feats__desc{ font-size:14px }\n  }\n</style>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "faq": {
@@ -764,7 +760,7 @@
     "rich_text_qgb4ie",
     "rich_text_VrDkiP",
     "4videos_aiyPqN",
-    "image_with_text_overlay_wp8djy",
+    "custom_liquid_cCXwdf",
     "faq"
   ]
 }
