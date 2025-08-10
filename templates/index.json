@@ -489,8 +489,8 @@
         "item_Ff4y3a": {
           "type": "item",
           "settings": {
-            "title": "Warum nur hier kaufen?",
-            "content": "<p>Originalprodukt, direkter Kundensupport und exklusive Angebote nur auf unserer Seite.</p>",
+            "title": "Warum nur auf unserer Website kaufen?",
+            "content": "<p>Unsere Produkte sind ausschließlich auf unserer <strong>offiziellen Website</strong> erhältlich. Verkäufe über externe Plattformen (z. B. Amazon) sind <strong>Fälschungen minderer Qualität</strong>. Um <strong>Echtheit</strong> und <strong>Qualität</strong> zu gewährleisten, kaufen Sie nur auf unserer Website. Für anderswo gekaufte Produkte übernehmen wir <strong>keine Haftung</strong>.</p>",
             "open_by_default": false,
             "icon_image": "shopify://shop_images/Capture_d_ecran_2025-08-10_130505.jpg",
             "icon_alt": "Icon",
