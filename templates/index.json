@@ -677,6 +677,32 @@
       "name": "Vidéos (défilement infini)",
       "settings": {}
     },
+    "rich_text_iwy89w": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gEdqcW": {
+          "type": "heading",
+          "settings": {
+            "text": "Warum die Seoulume-Maske wählen?",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_gEdqcW"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "custom_liquid_cCXwdf": {
       "type": "custom-liquid",
       "name": "Custom Liquid",
@@ -760,6 +786,7 @@
     "rich_text_qgb4ie",
     "rich_text_VrDkiP",
     "4videos_aiyPqN",
+    "rich_text_iwy89w",
     "custom_liquid_cCXwdf",
     "faq"
   ]
