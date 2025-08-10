@@ -9,18 +9,6 @@
  */
 {
   "sections": {
-    "rich_text_gLBLRX": {
-      "type": "rich-text",
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "image_with_text_overlay_NzAfii": {
       "type": "image-with-text-overlay",
       "name": "Image with text overlay",
@@ -1031,7 +1019,6 @@
     }
   },
   "order": [
-    "rich_text_gLBLRX",
     "image_with_text_overlay_NzAfii",
     "custom_liquid_BEbTB7",
     "custom_liquid_VNcGQx",
