@@ -399,6 +399,12 @@
             "payment_button_text_color": ""
           }
         },
+        "liquid_hzjTfH": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% assign uid = 'stock-' | append: 'now' | date: '%s' %}\n\n<div id=\"{{ uid }}\" class=\"stock-de\">\n  <span class=\"stock-de__dot\" aria-hidden=\"true\"></span>\n  <strong>Nur noch 5 auf Lager.</strong>\n</div>\n\n<style>\n  /* Scope */\n  #{{ uid }}.stock-de{\n    padding:0 !important;   /* demandé */\n    margin:0;\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    color:#111;\n    font-family:inherit;\n    line-height:1.2;\n  }\n  #{{ uid }} .stock-de__dot{\n    width:10px; height:10px; border-radius:50%;\n    background: radial-gradient(circle at 30% 30%, #ffe08a 0%, #f7c33b 55%, #d69600 100%);\n    box-shadow: 0 0 0 6px rgba(247, 195, 59, 0.18); /* halo doux */\n    flex:0 0 auto;\n  }\n</style>"
+          }
+        },
         "liquid_Meyxnr": {
           "type": "liquid",
           "settings": {
@@ -423,6 +429,7 @@
         "kaching_bundles_app_block_UrLLKM",
         "variant_picker_UdYgfE",
         "buy_buttons_pmj8rn",
+        "liquid_hzjTfH",
         "liquid_Meyxnr",
         "liquid_wqBWQc"
       ],
