@@ -39,6 +39,9 @@
     },
     "custom_liquid_BEbTB7": {
       "type": "custom-liquid",
+      "custom_css": [
+        ".section-full {padding-top: 10px; padding-bottom: 20px;}"
+      ],
       "name": "Custom Liquid",
       "settings": {
         "full_width": true,
@@ -52,6 +55,9 @@
     },
     "custom_liquid_VNcGQx": {
       "type": "custom-liquid",
+      "custom_css": [
+        ".section-full {padding-top: 0px; padding-bottom: 0px;}"
+      ],
       "name": "Custom Liquid",
       "settings": {
         "full_width": true,
