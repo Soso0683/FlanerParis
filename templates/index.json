@@ -677,6 +677,23 @@
       "name": "Vidéos (défilement infini)",
       "settings": {}
     },
+    "image_with_text_overlay_wp8djy": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/tube-curcuma_107953a3-db6d-436d-9df1-c79a4bdde968.jpg",
+        "mobile_image": "shopify://shop_images/tube-curcuma_107953a3-db6d-436d-9df1-c79a4bdde968.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -747,6 +764,7 @@
     "rich_text_qgb4ie",
     "rich_text_VrDkiP",
     "4videos_aiyPqN",
+    "image_with_text_overlay_wp8djy",
     "faq"
   ]
 }
