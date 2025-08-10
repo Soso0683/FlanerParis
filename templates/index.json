@@ -73,7 +73,9 @@
       "block_order": [
         "heading_zeAnQy"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".section-full {padding-top: 10px; padding-bottom: 10px;}"
+      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -86,7 +88,9 @@
     },
     "image_with_text_overlay_zT9Tyy": {
       "type": "image-with-text-overlay",
-      "custom_css": [],
+      "custom_css": [
+        ".section-full {padding-top: 10px; padding-bottom: 20px;}"
+      ],
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
