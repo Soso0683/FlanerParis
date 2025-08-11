@@ -1,12 +1,18 @@
-{% comment %} Section : Pictos (grille responsive 2x2 mobile / 4 desktop) — fix defaults {% endcomment %}
+{% comment %} Section : Pictos (grille responsive 2x2 mobile / 4 desktop) + Titre {% endcomment %}
 
 <section id="pictos-{{ section.id }}" class="pictos"
   style="
     --gap: {{ section.settings.gap | default: 28 }}px;
     --icon: {{ section.settings.icon_size | default: 56 }}px;
     --txt: {{ section.settings.text_size | default: 18 }}px;
+    --title: {{ section.settings.title_size | default: 32 }}px;
     --color: {{ section.settings.text_color | default: '#111111' }};
   ">
+  
+  {%- if section.settings.heading != blank -%}
+    <h2 class="pictos__title">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
   <div class="pictos__grid">
     {%- for block in section.blocks -%}
       {%- assign l2 = block.settings.line2 | default: '-' | strip -%}
@@ -38,6 +44,20 @@
 
 <style>
   #pictos-{{ section.id }}.pictos{ color:var(--color); font-family:inherit }
+
+  /* Titre comme la capture : gros, gras, centré, deux lignes auto */
+  #pictos-{{ section.id }} .pictos__title{
+    margin: 0 0 18px 0;
+    text-align:center;
+    font-weight: 800;
+    font-size: var(--title);
+    line-height: 1.1;
+    letter-spacing: .2px;
+  }
+  @media (max-width: 680px){
+    #pictos-{{ section.id }} .pictos__title{ font-size: calc(var(--title) * .88); }
+  }
+
   #pictos-{{ section.id }} .pictos__grid{
     display:grid;
     grid-template-columns: repeat(2, minmax(0,1fr)); /* mobile */
@@ -62,6 +82,8 @@
 {
   "name": "Pictos peau (grille)",
   "settings": [
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Perfekt für alle Hauttypen" },
+    { "type": "range", "id": "title_size", "label": "Taille du titre (px)", "min": 20, "max": 44, "step": 1, "default": 32 },
     { "type": "range", "id": "icon_size", "label": "Taille des pictos (px)", "min": 32, "max": 96, "step": 2, "default": 56 },
     { "type": "range", "id": "text_size", "label": "Taille du texte (px)", "min": 12, "max": 24, "step": 1, "default": 18 },
     { "type": "range", "id": "gap", "label": "Espace entre items (px)", "min": 8, "max": 48, "step": 2, "default": 28 },
@@ -75,8 +97,8 @@
         { "type": "image_picker", "id": "icon_image", "label": "Pictogramme (image)" },
         { "type": "text", "id": "icon_alt", "label": "Alt de l’icône", "default": "Icône" },
         { "type": "text", "id": "emoji", "label": "…ou Emoji (ex: 💧, 🍃)", "default": "•", "info": "Sera utilisé si aucune image n’est fournie." },
-        { "type": "text", "id": "line1", "label": "Texte ligne 1", "default": "Peau grasse" },
-        { "type": "text", "id": "line2", "label": "Texte ligne 2 (mettez « - » pour ne pas afficher)", "default": "-" }
+        { "type": "text", "id": "line1", "label": "Texte ligne 1", "default": "Fettige" },
+        { "type": "text", "id": "line2", "label": "Texte ligne 2 (mettez « - » pour ne pas afficher)", "default": "Haut" }
       ]
     }
   ],
@@ -85,10 +107,10 @@
     {
       "name": "Pictos peau",
       "blocks": [
-        { "type": "item", "settings": { "emoji": "💧", "line1": "Peau", "line2": "grasse" } },
-        { "type": "item", "settings": { "emoji": "🧴", "line1": "Peau", "line2": "sensible" } },
-        { "type": "item", "settings": { "emoji": "🌬️", "line1": "Peau", "line2": "sèche" } },
-        { "type": "item", "settings": { "emoji": "🍃", "line1": "Peau", "line2": "mature" } }
+        { "type": "item", "settings": { "emoji": "💧", "line1": "Fettige", "line2": "Haut" } },
+        { "type": "item", "settings": { "emoji": "🧴", "line1": "Empfindliche", "line2": "Haut" } },
+        { "type": "item", "settings": { "emoji": "🌬️", "line1": "Trockene", "line2": "Haut" } },
+        { "type": "item", "settings": { "emoji": "🍃", "line1": "Reife", "line2": "Haut" } }
       ]
     }
   ]
