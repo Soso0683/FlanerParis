@@ -898,7 +898,7 @@
         "full_width": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "liquid": "<!-- Bouton centré vers la section Featured product (1 ligne) -->\n<div class=\"cta-center\">\n  <a class=\"cta-scroll one-line\"\n     href=\"#shopify-section-template--26010984251734__featured_product_TFNa8U\"\n     aria-label=\"Angebot nutzen\">\n    Angebot&nbsp;nutzen&nbsp;!\n  </a>\n</div>\n\n<style>\n  html { scroll-behavior: smooth; }\n\n  .cta-center{\n    width:100%;\n    display:flex;\n    justify-content:center;\n    margin: 10px 0;\n  }\n\n  /* Une seule ligne, style pilule */\n  .cta-scroll.one-line{\n    display:inline-flex;\n    align-items:center;\n    justify-content:center;\n    padding-block:12px;\n    padding-inline: clamp(16px, 4vw, 26px);\n    border-radius:9999px;\n    background:#111; color:#fff;\n    font-weight:700;\n    font-size: clamp(13.5px, 4.2vw, 16px);\n    line-height:1.05;\n    letter-spacing:.2px;\n    white-space: nowrap;\n    max-width: 92vw;\n    text-decoration:none;\n    box-shadow:0 6px 18px rgba(0,0,0,.14);\n    transition:transform .1",
+        "liquid": "<!-- Bouton centré vers la section Featured product (1 ligne) -->\n<div class=\"cta-center\">\n  <a class=\"cta-scroll one-line\"\n     href=\"#shopify-section-template--26010984251734__featured_product_TFNa8U\"\n     aria-label=\"Angebot nutzen\">\n    Angebot&nbsp;nutzen&nbsp;!\n  </a>\n</div>\n\n<style>\n  html { scroll-behavior: smooth; }\n\n  /* Espace vertical réduit autour du bouton */\n  .cta-center{\n    width:100%;\n    display:flex;\n    justify-content:center;\n    margin: 6px 0; /* plus près des sections autour */\n  }\n\n  /* Bouton plus grand (hauteur, padding, typo) */\n  .cta-scroll.one-line{\n    display:inline-flex;\n    align-items:center;\n    justify-content:center;\n    padding-block:14px;                     /* + hauteur */\n    padding-inline: clamp(20px, 5.2vw, 34px);\n    border-radius:9999px;\n    background:#111; color:#fff;\n    font-weight:700;\n    font-size: clamp(15px, 4.2vw, 18px);    /* + taille texte */\n    line-height:1.05;\n    letter-spacing:.2px;\n    white-space: nowrap;\n    max-width: 92vw;\n    text-decoration:none;\n    box-shadow:0 6px 18px rgba(0,0,0,.14);\n    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;\n  }\n  .cta-scroll.one-line:hover{ transform:translateY(-1px); box-shadow:0 12px 26px rgba(0,0,0,.20); background:#0e0e0e; }\n  .cta-scroll.one-line:active{ transform:translateY(0); box-shadow:0 6px 18px rgba(0,0,0,.16); }\n  .cta-scroll.one-line:focus-visible{ outline:none; box-shadow:0 0 0 2px #fff, 0 0 0 4px rgba(0,0,0,.6); }\n\n  /* Décalage si header sticky */\n  #shopify-section-template--26010984251734__featured_product_TFNa8U{\n    scroll-margin-top: 90px;\n  }\n</style>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -1063,6 +1063,7 @@
       "block_order": [
         "loox_reviews_loox_agg_section_Fg3GqL"
       ],
+      "custom_css": [],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
