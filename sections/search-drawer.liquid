@@ -9,6 +9,10 @@
       </button>
     </div>
 
+    a[href="/search"] {
+  display: none !important;
+}
+
     <style>
       #shopify-section-{{ section.id }} {
         --predictive-search-column-count: 3;
@@ -206,10 +210,7 @@
             {%- endfor -%}
           </div>
         </div>
-        
-a[href="/search"] {
-  display: none !important;
-}
+
         {%- if section.settings.full_width -%}
           <div class="predictive-search__skeleton-full-width hidden">
             {%- for i in (1..3) -%}
