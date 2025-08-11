@@ -786,7 +786,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/curcuma_b08f1ab3-6a02-4068-96ef-e4e31ba89620.jpg",
-            "column_size": "3",
+            "column_size": "4",
             "title": "Kurkuma",
             "heading_tag": "h4",
             "content": "<p>Lässt den Teint strahlen, reduziert Rötungen und stärkt die natürliche Ausstrahlung der Haut.</p>",
@@ -799,7 +799,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/5.jpg",
-            "column_size": "3",
+            "column_size": "4",
             "title": "Kollagen",
             "heading_tag": "h4",
             "content": "<p>Fördert die Elastizität der Haut und sorgt für ein festeres Erscheinungsbild.</p>",
@@ -812,7 +812,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/vitamine_C.jpg",
-            "column_size": "3",
+            "column_size": "4",
             "title": "Vitamin C",
             "heading_tag": "h4",
             "content": "<p>Belebt die Leuchtkraft des Teints und mildert Pigmentflecken.</p>",
@@ -825,7 +825,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/6.jpg",
-            "column_size": "3",
+            "column_size": "4",
             "title": "Retinol",
             "heading_tag": "h4",
             "content": "<p>Glättet Falten und unterstützt die Zellerneuerung für sichtbar jüngere Haut.</p>",
