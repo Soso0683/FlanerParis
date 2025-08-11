@@ -881,16 +881,6 @@
         "text_color": ""
       }
     },
-    "fondnoir_QM8eNm": {
-      "type": "fondnoir",
-      "name": "90-Tage Garantie",
-      "settings": {
-        "badge": "shopify://shop_images/logo_scholl_6.png",
-        "badge_alt": "",
-        "title": "Testen Sie die Belury-Maske ganz unbesorgt – mit unserer 90-Tage-Geld-zurück-Garantie!",
-        "text": "<p>Hautexpertinnen und -experten, Dermatologinnen und Dermatologen sowie unsere Kundinnen und Kunden bestätigen es: <strong>Belury liefert sichtbare Ergebnisse!</strong></p><p>Von der Wirksamkeit überzeugt, bieten wir Ihnen <strong>90 Tage „zufrieden oder Geld zurück“</strong>.</p><p>Wenn Sie die erwarteten Ergebnisse nicht erzielen, <strong>erstatten wir Ihnen den vollen Betrag</strong>.</p>"
-      }
-    },
     "custom_liquid_yaRL47": {
       "type": "custom-liquid",
       "custom_css": [
@@ -905,6 +895,16 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "fondnoir_QM8eNm": {
+      "type": "fondnoir",
+      "name": "90-Tage Garantie",
+      "settings": {
+        "badge": "shopify://shop_images/logo_scholl_6.png",
+        "badge_alt": "",
+        "title": "Testen Sie die Belury-Maske ganz unbesorgt – mit unserer 90-Tage-Geld-zurück-Garantie!",
+        "text": "<p>Hautexpertinnen und -experten, Dermatologinnen und Dermatologen sowie unsere Kundinnen und Kunden bestätigen es: <strong>Belury liefert sichtbare Ergebnisse!</strong></p><p>Von der Wirksamkeit überzeugt, bieten wir Ihnen <strong>90 Tage „zufrieden oder Geld zurück“</strong>.</p><p>Wenn Sie die erwarteten Ergebnisse nicht erzielen, <strong>erstatten wir Ihnen den vollen Betrag</strong>.</p>"
       }
     },
     "faq": {
@@ -1097,8 +1097,8 @@
     "multi_column_tKFQat",
     "image_with_text_overlay_AAkfHE",
     "rich_text_XYnXFa",
-    "fondnoir_QM8eNm",
     "custom_liquid_yaRL47",
+    "fondnoir_QM8eNm",
     "faq",
     "image_with_text_overlay_CehwwN",
     "rich_text_JGCnVc",
