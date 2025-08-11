@@ -280,6 +280,35 @@
         "text_color": ""
       }
     },
+    "rich_text_KjRWKP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Da8nN3": {
+          "type": "heading",
+          "settings": {
+            "text": "Gesehen am:",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Da8nN3"
+      ],
+      "custom_css": [
+        ".section-full {padding-top: 5px; padding-bottom: 0px;}"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "vusur_AMMwfb": {
       "type": "Vusur",
       "blocks": {
@@ -318,6 +347,7 @@
         "logo_MHekY9",
         "logo_zVirEU"
       ],
+      "custom_css": [],
       "name": "Logos 2up",
       "settings": {
         "interval": 5000
@@ -1060,6 +1090,7 @@
     "image_with_text_overlay_zT9Tyy",
     "rich_text_tKz6U9",
     "multi_column_KKJRHK",
+    "rich_text_KjRWKP",
     "vusur_AMMwfb",
     "featured_product_TFNa8U",
     "menuderoulant_bgEe8X",
