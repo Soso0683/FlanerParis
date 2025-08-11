@@ -773,6 +773,7 @@
         "icon_size": 56,
         "text_size": 18,
         "gap": 28,
+        "space_top": 28,
         "text_color": "#111111"
       }
     },
