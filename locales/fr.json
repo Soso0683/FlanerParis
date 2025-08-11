@@ -418,7 +418,7 @@
   "password": {
     "general": {
       "follow_us": "Nous suivre",
-      "powered_by": "  v",
+      "powered_by": " ",
       "store_owner": "Gérant de la boutique ?",
       "login": "Se connecter"
     },
@@ -443,12 +443,12 @@
   },
   "shopify": {
     "links": {
-      "powered_by_shopify": " v"
+      "powered_by_shopify": " "
     },
     "checkout": {
       "general": {
         "complete_purchase_button_label": "Bestellung bestätigen",
-        "autocomplete_powered_by_google": " v"
+        "autocomplete_powered_by_google": " "
       }
     }
   }
