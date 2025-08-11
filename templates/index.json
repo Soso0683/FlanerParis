@@ -684,20 +684,6 @@
     },
     "rich_text_iwy89w": {
       "type": "rich-text",
-      "blocks": {
-        "heading_gEdqcW": {
-          "type": "heading",
-          "settings": {
-            "text": "Perfekt für alle Hauttypen",
-            "heading_tag": "h2",
-            "text_color": "",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_gEdqcW"
-      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -760,6 +746,8 @@
       ],
       "name": "Pictos peau",
       "settings": {
+        "heading": "Perfekt für alle Hauttypen",
+        "title_size": 36,
         "icon_size": 56,
         "text_size": 18,
         "gap": 28,
