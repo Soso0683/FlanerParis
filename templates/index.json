@@ -645,32 +645,6 @@
         "text_color": ""
       }
     },
-    "rich_text_VrDkiP": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_UB6zQN": {
-          "type": "heading",
-          "settings": {
-            "text": "Konkrete Ergebnisse",
-            "heading_tag": "h2",
-            "text_color": "",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_UB6zQN"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "4videos_aiyPqN": {
       "type": "4videos",
       "blocks": {
@@ -711,7 +685,11 @@
       ],
       "custom_css": [],
       "name": "Vidéos (défilement infini)",
-      "settings": {}
+      "settings": {
+        "heading": "Konkrete Ergebnisse",
+        "pad_top": 8,
+        "pad_bottom": 8
+      }
     },
     "4logos_LGJkY7": {
       "type": "4logos",
@@ -1097,7 +1075,6 @@
     "menuderoulant_bgEe8X",
     "image_with_text_overlay_y7NGxm",
     "rich_text_qgb4ie",
-    "rich_text_VrDkiP",
     "4videos_aiyPqN",
     "4logos_LGJkY7",
     "multi_column_tKFQat",
