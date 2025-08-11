@@ -206,7 +206,10 @@
             {%- endfor -%}
           </div>
         </div>
-
+        
+a[href="/search"] {
+  display: none !important;
+}
         {%- if section.settings.full_width -%}
           <div class="predictive-search__skeleton-full-width hidden">
             {%- for i in (1..3) -%}
