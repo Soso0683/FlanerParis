@@ -1,4 +1,4 @@
-{% comment %} Section : Pictos (grille responsive 2x2 mobile / 4 desktop) + Titre {% endcomment %}
+{% comment %} Section : Pictos (grille responsive 2x2 mobile / 4 desktop) + Titre + Espace haut {% endcomment %}
 
 <section id="pictos-{{ section.id }}" class="pictos"
   style="
@@ -7,6 +7,7 @@
     --txt: {{ section.settings.text_size | default: 18 }}px;
     --title: {{ section.settings.title_size | default: 32 }}px;
     --color: {{ section.settings.text_color | default: '#111111' }};
+    --space-top: {{ section.settings.space_top | default: 24 }}px;
   ">
   
   {%- if section.settings.heading != blank -%}
@@ -43,9 +44,13 @@
 </section>
 
 <style>
-  #pictos-{{ section.id }}.pictos{ color:var(--color); font-family:inherit }
+  #pictos-{{ section.id }}.pictos{
+    color:var(--color);
+    font-family:inherit;
+    margin-top: var(--space-top); /* espace avec la section précédente */
+  }
 
-  /* Titre comme la capture : gros, gras, centré, deux lignes auto */
+  /* Titre style capture */
   #pictos-{{ section.id }} .pictos__title{
     margin: 0 0 18px 0;
     text-align:center;
@@ -87,6 +92,7 @@
     { "type": "range", "id": "icon_size", "label": "Taille des pictos (px)", "min": 32, "max": 96, "step": 2, "default": 56 },
     { "type": "range", "id": "text_size", "label": "Taille du texte (px)", "min": 12, "max": 24, "step": 1, "default": 18 },
     { "type": "range", "id": "gap", "label": "Espace entre items (px)", "min": 8, "max": 48, "step": 2, "default": 28 },
+    { "type": "range", "id": "space_top", "label": "Espace au-dessus (px)", "min": 0, "max": 120, "step": 2, "default": 24 },
     { "type": "color", "id": "text_color", "label": "Couleur du texte", "default": "#111111" }
   ],
   "blocks": [
