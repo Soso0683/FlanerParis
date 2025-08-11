@@ -891,6 +891,19 @@
         "text": "<p>Hautexpertinnen und -experten, Dermatologinnen und Dermatologen sowie unsere Kundinnen und Kunden bestätigen es: <strong>Belury liefert sichtbare Ergebnisse!</strong></p><p>Von der Wirksamkeit überzeugt, bieten wir Ihnen <strong>90 Tage „zufrieden oder Geld zurück“</strong>.</p><p>Wenn Sie die erwarteten Ergebnisse nicht erzielen, <strong>erstatten wir Ihnen den vollen Betrag</strong>.</p>"
       }
     },
+    "custom_liquid_yaRL47": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<!-- Bouton centré vers la section Featured product (1 ligne) -->\n<div class=\"cta-center\">\n  <a class=\"cta-scroll one-line\"\n     href=\"#shopify-section-template--26010984251734__featured_product_TFNa8U\"\n     aria-label=\"Angebot nutzen\">\n    Angebot&nbsp;nutzen&nbsp;!\n  </a>\n</div>\n\n<style>\n  html { scroll-behavior: smooth; }\n\n  .cta-center{\n    width:100%;\n    display:flex;\n    justify-content:center;\n    margin: 10px 0;\n  }\n\n  /* Une seule ligne, style pilule */\n  .cta-scroll.one-line{\n    display:inline-flex;\n    align-items:center;\n    justify-content:center;\n    padding-block:12px;\n    padding-inline: clamp(16px, 4vw, 26px);\n    border-radius:9999px;\n    background:#111; color:#fff;\n    font-weight:700;\n    font-size: clamp(13.5px, 4.2vw, 16px);\n    line-height:1.05;\n    letter-spacing:.2px;\n    white-space: nowrap;\n    max-width: 92vw;\n    text-decoration:none;\n    box-shadow:0 6px 18px rgba(0,0,0,.14);\n    transition:transform .1",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -1081,6 +1094,7 @@
     "image_with_text_overlay_AAkfHE",
     "rich_text_XYnXFa",
     "fondnoir_QM8eNm",
+    "custom_liquid_yaRL47",
     "faq",
     "image_with_text_overlay_CehwwN",
     "rich_text_JGCnVc",
