@@ -447,7 +447,8 @@
     },
     "checkout": {
       "general": {
-        "complete_purchase_button_label": "Bestellung bestätigen"
+        "complete_purchase_button_label": "Bestellung bestätigen",
+        "autocomplete_powered_by_google": " "
       }
     }
   }
