@@ -1,5 +1,6 @@
 {% comment %}
   Section : Carrousel de vidéos (upload, loop, swipe, infini) + Titre & padding
+  - FIX: boutons cliquables, init des vidéos y compris clones, anti-écran noir (fade-in quand prêt)
 {% endcomment %}
 
 <section id="vids-{{ section.id }}" class="vidsec"
@@ -24,9 +25,11 @@
                 playsinline: true,
                 controls: false,
                 preload: 'auto'
-            }}
+            | replace: '<video', '<video webkit-playsinline' }}
           {% elsif block.settings.mp4_url != blank %}
-            <video class="vidsec__video" src="{{ block.settings.mp4_url }}" autoplay muted loop playsinline preload="auto"></video>
+            <video class="vidsec__video"
+                   src="{{ block.settings.mp4_url }}"
+                   autoplay muted loop playsinline webkit-playsinline preload="auto"></video>
           {% else %}
             <div class="vidsec__placeholder">Video fehlt</div>
           {% endif %}
@@ -46,7 +49,6 @@
     padding-bottom: var(--pad-bottom);
   }
 
-  /* Titre : même look que les gros titres du thème (épais, centré) */
   #vids-{{ section.id }} .vidsec__title{
     margin: 0 0 14px 0;
     text-align:center;
@@ -54,7 +56,7 @@
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.15;
-    font-size: clamp(28px, 5.6vw, 40px); /* grossit sur desktop, tient sur mobile */
+    font-size: clamp(28px, 5.6vw, 40px);
   }
 
   #vids-{{ section.id }} .vidsec__viewport{
@@ -70,17 +72,24 @@
     flex:0 0 calc((100% - (var(--gap) * (var(--visible) - 1))) / var(--visible));
     border-radius:var(--radius); overflow:hidden; background:#000;
   }
+
+  /* Anti-écran noir : on ne montre la vidéo qu'une fois prête */
   #vids-{{ section.id }} .vidsec__video{
-    width:100%; height:100%; display:block; object-fit:cover; pointer-events:none;
+    width:100%; height:100%; display:block; object-fit:cover;
+    pointer-events:none;
+    opacity:0; transition: opacity .2s ease;
+    background:#000;
   }
+  #vids-{{ section.id }} .vidsec__video.is-ready{ opacity:1; }
+
   #vids-{{ section.id }} .vidsec__placeholder{
     height:220px; display:grid; place-items:center; color:#888; background:#f1f1f1;
   }
   #vids-{{ section.id }} .vidsec__btn{
     position:absolute; top:50%; transform:translateY(-50%);
     width:36px; height:36px; border-radius:50%; border:none;
-    background:#111; color:#fff; opacity:.92; display:grid; place-items:center;
-    cursor:pointer; z-index:3; pointer-events:auto;
+    background:#111; color:#fff; opacity:.96; display:grid; place-items:center;
+    cursor:pointer; z-index:10; /* plus haut que la piste */
   }
   #vids-{{ section.id }} .vidsec__btn--prev{ left:6px }
   #vids-{{ section.id }} .vidsec__btn--next{ right:6px }
@@ -97,6 +106,7 @@
   const track = root.querySelector('.vidsec__track');
   const prevB = root.querySelector('.vidsec__btn--prev');
   const nextB = root.querySelector('.vidsec__btn--next');
+
   let items   = Array.from(track.children);
   const orig  = items.length;
   if (orig === 0) return;
@@ -109,7 +119,7 @@
     return cardW + gap;
   };
 
-  // Clones pour boucle infinie
+  /* ---------- CLONES pour boucle infinie ---------- */
   let cloneN = Math.min(getVisible(), orig);
   for(let i=orig-cloneN; i<orig; i++){ track.insertBefore(items[i].cloneNode(true), track.firstChild); }
   for(let i=0; i<cloneN; i++){ track.appendChild(items[i].cloneNode(true)); }
@@ -139,23 +149,20 @@
     else if (index < cloneN){    go(index + orig, false); }
   });
 
-  const stopPtr = (e)=>{ e.stopPropagation(); e.preventDefault(); };
-  ['pointerdown','touchstart'].forEach(ev=>{
-    nextB.addEventListener(ev, stopPtr, {passive:false});
-    prevB.addEventListener(ev, stopPtr, {passive:false});
-  });
+  /* ---------- BOUTONS : cliquables ---------- */
   nextB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index + 1, true); });
   prevB.addEventListener('click', (e)=>{ e.stopPropagation(); go(index - 1, true); });
 
+  /* ---------- Resize ---------- */
   const ro = new ResizeObserver(()=>{ ensureStep(); go(index, false); });
   ro.observe(root);
   window.addEventListener('load', ()=>{ ensureStep(); go(index, false); });
 
-  // Swipe
+  /* ---------- Swipe ---------- */
   const vp = root.querySelector('.vidsec__viewport');
   let startX=0, delta=0, dragging=false;
   const start = (x, target) => {
-    if (target && target.closest && target.closest('.vidsec__btn')) return;
+    if (target && target.closest && target.closest('.vidsec__btn')) return; // ignorer si clic sur bouton
     dragging=true; startX=x; delta=0; track.style.transition='none';
   };
   const move  = x => { if(!dragging) return; ensureStep(); delta=x-startX; track.style.transform=`translateX(${-(index*step)+delta}px)`; };
@@ -175,21 +182,39 @@
   vp.addEventListener('touchmove',  e=> move(e.touches[0].clientX), {passive:true});
   vp.addEventListener('touchend', end);
 
-  // Lecture / pause selon visibilité (boucle permanente)
-  const vids = Array.from(root.querySelectorAll('video'));
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      const v = entry.target;
-      if (entry.isIntersecting && entry.intersectionRatio > 0.55){ try{ v.play().catch(()=>{});}catch(e){} }
-      else { try{ v.pause(); }catch(e){} }
-    });
-  }, { root: vp, threshold: [0, .55, 1] });
-  vids.forEach(v=>{
-    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden){ try{ v.play().catch(()=>{});}catch(e){} } });
-    io.observe(v);
-  });
+  /* ---------- VIDÉOS : init + anti-écran noir ---------- */
+  function initOneVideo(v){
+    if (v.dataset.init === '1') return;
+    v.dataset.init = '1';
+    v.muted = true; v.loop = true; v.playsInline = true;
+    v.addEventListener('loadeddata', ()=>{ v.classList.add('is-ready'); }, { once:true });
+    // tenter le play quand possible
+    const tryPlay = ()=> { try { v.play().catch(()=>{}); } catch(e){} };
+    v.addEventListener('canplay', tryPlay, { once:true });
+    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) tryPlay(); });
+  }
 
-  ensureStep(); go(index, false);
+  function initAllVideos(){
+    const vids = Array.from(root.querySelectorAll('video'));
+    vids.forEach(initOneVideo);
+
+    // Observer visibilité (joue/pause selon visibilité)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        const v = entry.target;
+        if (entry.isIntersecting && entry.intersectionRatio > 0.55){
+          try { v.play().catch(()=>{}); } catch(e){}
+        } else {
+          try { v.pause(); } catch(e){}
+        }
+      });
+    }, { root: vp, threshold: [0, .55, 1] });
+
+    vids.forEach(v=> io.observe(v));
+  }
+
+  initAllVideos();    // init originaux
+  go(index, false);   // position initiale
 })();
 </script>
 
