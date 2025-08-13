@@ -162,14 +162,14 @@
     "multi_column_KKJRHK": {
       "type": "multi-column",
       "blocks": {
-        "item_Ghckbm": {
+        "item_CKcQMc": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/28.png",
+            "image": "shopify://shop_images/33.png",
             "column_size": "4",
-            "title": "Veronika L.",
+            "title": "Sophie M.",
             "heading_tag": "h4",
-            "content": "<p>Ich habe nicht mehr an Wunder geglaubt. Aber nach 10 Tagen Anwendung wirkt mein Gesicht ausgeruhter, meine Züge weniger angespannt. Seoulume verspricht keine ewige Jugend, aber es schenkt neues Selbstvertrauen. Und das ist wertvoll.</p>",
+            "content": "<p>Ich habe fettige Cremes nie vertragen.Seoulume ist anders: zieht schnell ein, kein Glanz, keine Rückstände. Und mein Teint? Heller, klarer, gleichmäßiger. Ich empfehle es zu 100 %.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -201,6 +201,19 @@
             "link_style": "link"
           }
         },
+        "item_Ghckbm": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/28.png",
+            "column_size": "4",
+            "title": "Veronika L.",
+            "heading_tag": "h4",
+            "content": "<p>Ich habe nicht mehr an Wunder geglaubt. Aber nach 10 Tagen Anwendung wirkt mein Gesicht ausgeruhter, meine Züge weniger angespannt. Seoulume verspricht keine ewige Jugend, aber es schenkt neues Selbstvertrauen. Und das ist wertvoll.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
         "item_yEKxc6": {
           "type": "item",
           "settings": {
@@ -227,19 +240,6 @@
             "link_style": "link"
           }
         },
-        "item_CKcQMc": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/33.png",
-            "column_size": "4",
-            "title": "Sophie M.",
-            "heading_tag": "h4",
-            "content": "<p>Ich habe fettige Cremes nie vertragen.Seoulume ist anders: zieht schnell ein, kein Glanz, keine Rückstände. Und mein Teint? Heller, klarer, gleichmäßiger. Ich empfehle es zu 100 %.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
         "item_WXYdRk": {
           "type": "item",
           "settings": {
@@ -255,12 +255,12 @@
         }
       },
       "block_order": [
-        "item_Ghckbm",
+        "item_CKcQMc",
         "item_EgH7wR",
         "item_PgAky3",
+        "item_Ghckbm",
         "item_yEKxc6",
         "item_yEDfPD",
-        "item_CKcQMc",
         "item_WXYdRk"
       ],
       "custom_css": [
