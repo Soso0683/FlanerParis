@@ -214,6 +214,19 @@
             "link_style": "link"
           }
         },
+        "item_WXYdRk": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/34.png",
+            "column_size": "4",
+            "title": "Chloe N.",
+            "heading_tag": "h4",
+            "content": "<p>Ich habe zu Akne neigende, empfindliche Haut und hatte immer Schwierigkeiten, eine Pflege zu finden, die keine Reaktionen auslöst. Mit Seoulume sehe ich einen echten Unterschied: weniger Rötungen, verfeinerte Poren und ein strahlenderer Teint. Es ist zu meinem unverzichtbaren Abendritual geworden.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
         "item_Ghckbm": {
           "type": "item",
           "settings": {
@@ -239,19 +252,6 @@
             "link_text": "",
             "link_style": "link"
           }
-        },
-        "item_WXYdRk": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/34.png",
-            "column_size": "4",
-            "title": "Chloe N.",
-            "heading_tag": "h4",
-            "content": "<p>Ich habe zu Akne neigende, empfindliche Haut und hatte immer Schwierigkeiten, eine Pflege zu finden, die keine Reaktionen auslöst. Mit Seoulume sehe ich einen echten Unterschied: weniger Rötungen, verfeinerte Poren und ein strahlenderer Teint. Es ist zu meinem unverzichtbaren Abendritual geworden.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
         }
       },
       "block_order": [
@@ -259,9 +259,9 @@
         "item_EgH7wR",
         "item_CKcQMc",
         "item_PgAky3",
+        "item_WXYdRk",
         "item_Ghckbm",
-        "item_yEKxc6",
-        "item_WXYdRk"
+        "item_yEKxc6"
       ],
       "custom_css": [
         ".section-full {padding-top: 10px; padding-bottom: 0px;}"
