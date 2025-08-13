@@ -175,19 +175,6 @@
             "link_style": "link"
           }
         },
-        "item_EgH7wR": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/29.png",
-            "column_size": "4",
-            "title": "Ines B.",
-            "heading_tag": "h4",
-            "content": "<p>Schon in der ersten Nacht habe ich gesehen, wie sich meine Haut veränderte – strahlender, besser mit Feuchtigkeit versorgt. Und das, ohne meine empfindliche Haut zu reizen oder zu fetten. Ich liebe die Textur der Maske.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
         "item_PgAky3": {
           "type": "item",
           "settings": {
@@ -196,6 +183,19 @@
             "title": "Carolin S.",
             "heading_tag": "h4",
             "content": "<p>Mit dem Alter wirkte meine Haut fahl, ohne Ausstrahlung. Seoulume hat mir wieder einen frischen Teint geschenkt – mit einer ganz einfachen Routine. Nur ein Produkt, ein Pinsel und los. Das ist meine persönliche Pflegeroutine.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_EgH7wR": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/29.png",
+            "column_size": "4",
+            "title": "Ines B.",
+            "heading_tag": "h4",
+            "content": "<p>Schon in der ersten Nacht habe ich gesehen, wie sich meine Haut veränderte – strahlender, besser mit Feuchtigkeit versorgt. Und das, ohne meine empfindliche Haut zu reizen oder zu fetten. Ich liebe die Textur der Maske.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -256,8 +256,8 @@
       },
       "block_order": [
         "item_CKcQMc",
-        "item_EgH7wR",
         "item_PgAky3",
+        "item_EgH7wR",
         "item_Ghckbm",
         "item_yEKxc6",
         "item_yEDfPD",
