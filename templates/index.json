@@ -162,6 +162,32 @@
     "multi_column_KKJRHK": {
       "type": "multi-column",
       "blocks": {
+        "item_yEDfPD": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/32.png",
+            "column_size": "4",
+            "title": "Elisa C.",
+            "heading_tag": "h4",
+            "content": "<p>Ich habe unzählige Cremes ausprobiert, um meine Pigmentflecken zu mildern – ohne Erfolg. Mit Seoulume sehe ich endlich sichtbare und natürliche Ergebnisse. Und keine schwere Textur! Es ist zu meinem Beauty-Ritual am Abend geworden.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_EgH7wR": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/29.png",
+            "column_size": "4",
+            "title": "Ines B.",
+            "heading_tag": "h4",
+            "content": "<p>Schon in der ersten Nacht habe ich gesehen, wie sich meine Haut veränderte – strahlender, besser mit Feuchtigkeit versorgt. Und das, ohne meine empfindliche Haut zu reizen oder zu fetten. Ich liebe die Textur der Maske.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
         "item_CKcQMc": {
           "type": "item",
           "settings": {
@@ -183,19 +209,6 @@
             "title": "Carolin S.",
             "heading_tag": "h4",
             "content": "<p>Mit dem Alter wirkte meine Haut fahl, ohne Ausstrahlung. Seoulume hat mir wieder einen frischen Teint geschenkt – mit einer ganz einfachen Routine. Nur ein Produkt, ein Pinsel und los. Das ist meine persönliche Pflegeroutine.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_EgH7wR": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/29.png",
-            "column_size": "4",
-            "title": "Ines B.",
-            "heading_tag": "h4",
-            "content": "<p>Schon in der ersten Nacht habe ich gesehen, wie sich meine Haut veränderte – strahlender, besser mit Feuchtigkeit versorgt. Und das, ohne meine empfindliche Haut zu reizen oder zu fetten. Ich liebe die Textur der Maske.</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -227,19 +240,6 @@
             "link_style": "link"
           }
         },
-        "item_yEDfPD": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/32.png",
-            "column_size": "4",
-            "title": "Elisa C.",
-            "heading_tag": "h4",
-            "content": "<p>Ich habe unzählige Cremes ausprobiert, um meine Pigmentflecken zu mildern – ohne Erfolg. Mit Seoulume sehe ich endlich sichtbare und natürliche Ergebnisse. Und keine schwere Textur! Es ist zu meinem Beauty-Ritual am Abend geworden.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
         "item_WXYdRk": {
           "type": "item",
           "settings": {
@@ -255,12 +255,12 @@
         }
       },
       "block_order": [
+        "item_yEDfPD",
+        "item_EgH7wR",
         "item_CKcQMc",
         "item_PgAky3",
-        "item_EgH7wR",
         "item_Ghckbm",
         "item_yEKxc6",
-        "item_yEDfPD",
         "item_WXYdRk"
       ],
       "custom_css": [
