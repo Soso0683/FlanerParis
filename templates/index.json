@@ -686,7 +686,6 @@
       "name": "Vidéos (défilement infini)",
       "settings": {
         "heading": "Konkrete Ergebnisse",
-        "default_poster": "shopify://shop_images/lbZcGASMt3i.jpg",
         "pad_top": 8,
         "pad_bottom": 8
       }
