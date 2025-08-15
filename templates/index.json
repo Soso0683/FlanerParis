@@ -372,6 +372,12 @@
           "type": "badges",
           "settings": {}
         },
+        "liquid_arfPG7": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% assign now_s = 'now' | date: '%s' %}\n{% assign uid = 'stock-' | append: now_s %}\n\n<span id=\"{{ uid }}\" class=\"badge badge--red\">\n  <span class=\"badge__dot\" aria-hidden=\"true\"></span>\n  <span>Restbestand: 5 Tuben</span>\n</span>\n\n<style>\n  #{{ uid }}.badge{\n    display:inline-flex; align-items:center; gap:8px;\n    padding:8px 12px; border-radius:10px;\n    font-size:13px; font-weight:700; line-height:1;\n    border:1px solid #F5C2C0;\n    background:#FCE8E7; color:#B42318;\n    white-space:nowrap;\n  }\n\n  /* Point clignotant */\n  #{{ uid }} .badge__dot{\n    width:10px; height:10px; border-radius:50%;\n    background: currentColor; display:inline-block;\n    box-shadow: 0 0 0 0 currentColor;\n    animation: {{ uid }}-blink 1.1s ease-in-out infinite;\n  }\n\n  @keyframes {{ uid }}-blink{\n    0%, 100% { opacity:1; transform:scale(1); box-shadow:0 0 0 0 currentColor; }\n    50%      { opacity:.35; transform:scale(.85); box-shadow:0 0 0 4px rgba(180,35,24,.15); }\n  }\n\n  /* Accessibilité */\n  @media (prefers-reduced-motion: reduce){\n    #{{ uid }} .badge__dot{ animation-duration: 2.2s; }\n  }\n</style>"
+          }
+        },
         "price_pK7qDP": {
           "type": "price",
           "settings": {
@@ -423,12 +429,6 @@
             "size_chart_page": ""
           }
         },
-        "liquid_hzjTfH": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "{% assign uid = 'stock-' | append: 'now' | date: '%s' %}\n\n<div id=\"{{ uid }}\" class=\"stock-de\">\n  <span class=\"stock-de__dot\" aria-hidden=\"true\"></span>\n  <strong>Nur noch 5 auf Lager.</strong>\n</div>\n\n<style>\n  /* Scope */\n  #{{ uid }}.stock-de{\n    padding:0 !important;   /* demandé */\n    margin:0;\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    color:#111;\n    font-family:inherit;\n    line-height:1.2;\n  }\n  #{{ uid }} .stock-de__dot{\n    width:10px; height:10px; border-radius:50%;\n    background: radial-gradient(circle at 30% 30%, #ffe08a 0%, #f7c33b 55%, #d69600 100%);\n    box-shadow: 0 0 0 6px rgba(247, 195, 59, 0.18); /* halo doux */\n    flex:0 0 auto;\n  }\n</style>"
-          }
-        },
         "buy_buttons_pmj8rn": {
           "type": "buy_buttons",
           "settings": {
@@ -463,6 +463,7 @@
         "title_EPkr9r",
         "liquid_LgmDUd",
         "badges_fVYgHn",
+        "liquid_arfPG7",
         "price_pK7qDP",
         "liquid_6HnqRE",
         "image_rwPgwi",
@@ -470,7 +471,6 @@
         "description_LHUreh",
         "kaching_bundles_app_block_UrLLKM",
         "variant_picker_UdYgfE",
-        "liquid_hzjTfH",
         "buy_buttons_pmj8rn",
         "liquid_Meyxnr",
         "liquid_wqBWQc",
